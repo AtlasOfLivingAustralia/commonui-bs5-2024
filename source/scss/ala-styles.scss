@@ -1,0 +1,304 @@
+// 2024 ALA styles
+
+// Roboto font
+@import url(https://fonts.googleapis.com/css?family=Lato%3A700%7CRoboto%3A300%2C400%2C400i%2C500%2C700%2C900&ver=5.2.1);
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../vendor/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// colour mode (light/dark) automatic based on browser
+$color-mode-type: media-query;
+
+// ALA colour palette
+$flamingo: #f26649;
+$rust: #c44d34;
+$grey: #637073;
+$concrete: #f2f2f2;
+$silver: #9d9d9d;
+$charcoal: #212121;
+$honey: #ffc557;
+$pale-moss: #b7cd96;
+$seafoam: #68dad5;
+$ocean: #003a70;
+$lavender: #a191b2;
+$plum: #691c32;
+$marigold: #eb9d07;
+$lagoon: #076164;
+$peacock: #1b5d81;
+$eggplant: #5b397d;
+$sand: #ffedcf;
+$forest: #38613d;
+$glacial: #c3edef;
+$pinot: #921d11;
+
+$primary:       $rust;
+$secondary:     $silver;
+$success:       $pale-moss;
+$info:          $seafoam;
+$warning:       $honey;
+$danger:        $flamingo;
+$light:         $concrete;
+$dark:          $charcoal;
+
+$font-family-sans-serif: Roboto, sans-serif;
+
+$body-color: $charcoal;
+$body-color-dark: $concrete;
+
+$link-color: $ocean;
+$link-color-dark: $glacial;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../vendor/bootstrap/scss/variables";
+@import "../vendor/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+
+
+
+// 5. Include remainder of required parts
+@import "../vendor/bootstrap/scss/maps";
+@import "../vendor/bootstrap/scss/mixins";
+@import "../vendor/bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../vendor/bootstrap/scss/utilities";
+@import "../vendor/bootstrap/scss/reboot";
+@import "../vendor/bootstrap/scss/type";
+@import "../vendor/bootstrap/scss/images";
+@import "../vendor/bootstrap/scss/containers";
+@import "../vendor/bootstrap/scss/grid";
+@import "../vendor/bootstrap/scss/helpers";
+
+@import "../vendor/bootstrap/scss/tables";
+@import "../vendor/bootstrap/scss/forms";
+@import "../vendor/bootstrap/scss/buttons";
+@import "../vendor/bootstrap/scss/transitions";
+@import "../vendor/bootstrap/scss/dropdown";
+@import "../vendor/bootstrap/scss/button-group";
+@import "../vendor/bootstrap/scss/nav";
+@import "../vendor/bootstrap/scss/navbar";
+@import "../vendor/bootstrap/scss/card";
+@import "../vendor/bootstrap/scss/accordion";
+@import "../vendor/bootstrap/scss/breadcrumb";
+@import "../vendor/bootstrap/scss/pagination";
+@import "../vendor/bootstrap/scss/badge";
+@import "../vendor/bootstrap/scss/alert";
+@import "../vendor/bootstrap/scss/progress";
+@import "../vendor/bootstrap/scss/list-group";
+@import "../vendor/bootstrap/scss/close";
+@import "../vendor/bootstrap/scss/toasts";
+@import "../vendor/bootstrap/scss/modal";
+@import "../vendor/bootstrap/scss/tooltip";
+@import "../vendor/bootstrap/scss/popover";
+@import "../vendor/bootstrap/scss/carousel";
+@import "../vendor/bootstrap/scss/spinners";
+@import "../vendor/bootstrap/scss/offcanvas";
+@import "../vendor/bootstrap/scss/placeholders";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../vendor/bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
+
+// outline buttons with different text colour
+.btn-outline-primary  {
+    --bs-btn-color: $charcoal;
+    @media (prefers-color-scheme: dark) {
+        --bs-btn-color: $concrete;
+    }
+}
+
+// slightly wider left/right gutters
+.row > * {
+    --bs-gutter-x: 1.75rem;
+}
+
+.footer-top {
+
+    padding: 30px 0;
+    // desktop: padding: 58px 0;
+    border-top: 1px solid $gray-300;
+    @media (prefers-color-scheme: dark) {
+        border-top: 1px solid $gray-800;
+    }
+
+    .ala-footer-ala-logo {
+        width: 325px;
+        height: 47px;
+        background-size: auto;
+        margin-bottom: 1.4rem;
+    }
+
+    .ala-footer-partner-text {
+        font-size: 0.9rem;
+        width: 95%;
+    }
+
+    .ala-footer-partner-logos {
+        list-style: none;
+        margin-bottom: 2rem;
+
+        li {
+            margin-right: 1.3rem;
+        }
+
+        .ala-footer-ncris-logo {
+            margin-right: 1.1rem;
+
+            img, source {
+                width: 65px;
+            }
+        }
+        
+        .ala-footer-csiro-logo {
+            width: 47px;
+        }
+
+        .ala-footer-gbif-logo {
+            img, source {
+                width: 102px;
+            }
+            
+        }
+    }
+
+    .ala-footer-news-help {
+        font-weight: bold;
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            margin-bottom: 0.9rem;
+        }
+    }
+
+    .ala-footer-socials {
+        list-style: none;
+        margin-bottom: 2rem;
+
+        li {
+            width: 2rem;
+            display: inline-block;
+            margin-right: 1.2rem;
+
+
+            button {
+                --bs-btn-padding-x: 0;
+                --bs-btn-padding-y: 0;
+                --bs-btn-border-radius: 0.2rem;
+                width: 1.3rem;
+                height: 1.3rem;
+                font-size: 0.5rem;
+
+                &.ala-footer-facebook {
+                    font-size: 0.9rem;
+                }
+                &.ala-footer-twitter svg {
+                    margin-left: -0.3rem;
+                }
+                &.ala-footer-linkedin svg {
+                    margin-left: -0.2rem;
+                    width: 1.4rem;
+                }
+                &.ala-footer-insta svg {
+                    margin-left: -0.2rem;
+                    width: 1.2rem;
+                }
+
+                svg {
+                    width: 1rem;
+                    height: 1rem;
+                    //color: white;
+
+                    @media (prefers-color-scheme: dark) {
+                        color: black;
+                    }
+                }
+
+                @media (prefers-color-scheme: dark) {
+                    --bs-btn-bg: white;
+                    --bs-btn-hover-bg: #eee;
+                    --bs-btn-active-bg: #ddd;
+                }
+            }
+
+        }
+    }
+
+    .ala-footer-copyright-etc {
+        list-style: none;
+        font-size: 0.9rem;
+        padding-top: 1.2rem;
+
+        li {
+            width: 7rem;
+            display: inline-block;
+        }
+    }
+
+    .ala-footer-contact {
+        
+        h4 {
+            font-size: $font-size-base;
+            margin-bottom: 1.1rem;
+        }
+        p {
+            width: 95%;
+        }
+    }
+}
+
+
+// acknowledgement block in footer
+.footer-bottom {
+    background-color: #550100;
+    background-image: url('../img/footer-acknowledgement-bg.svg');
+    background-size: cover;
+
+    .col {
+        padding-top: 1rem;
+        text-align: left;
+        color: white;
+        font-size: 125%;
+
+        a {
+            color: white;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            width: 95%;
+        }
+
+        .ala-footer-acknowledgement-learn {
+            font-size: 1rem;
+        }
+    }
+}
+@include media-breakpoint-up(lg) {
+    .footer-top {
+        padding: 58px 0;
+
+        .ala-footer-partner-text {
+            width: 335px;
+        }
+
+        .ala-footer-partner-logos, .ala-footer-socials {
+            margin-bottom: 0;
+        }
+    }
+    .footer-bottom {
+
+        .col {
+            padding: 4rem 11rem 2.6rem;
+            text-align: center;
+            p {
+                margin-bottom: 2rem;
+            }    
+        }
+    }
+}
+
