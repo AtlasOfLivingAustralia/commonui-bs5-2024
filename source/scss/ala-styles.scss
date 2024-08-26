@@ -116,8 +116,86 @@ $link-color-dark: $glacial;
     --bs-gutter-x: 1.75rem;
 }
 
-.footer-top {
+.ala-header {
+    margin-top: 1.75rem;
+}
 
+.ala-header-top-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ala-header-desktop-logo {
+    justify-content: flex-start;
+}
+
+.ala-header-desktop-tools {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    div {
+        margin-left: 2rem;
+    }
+    .ala-header-contact, .ala-header-dark-toggle, .ala-header-search-toggle {
+        margin-top: 0.45rem;
+    }
+
+    .ala-header-contact {
+        --bs-link-color-rgb: $charcoal;
+        @media (prefers-color-scheme: dark) {
+            --bs-link-color-rgb: white;
+        }
+        a {
+            text-decoration: none;
+        }
+        
+    }
+    svg {
+        width: 1rem;
+        height: 1rem;
+        color: black;
+
+        @media (prefers-color-scheme: dark) {
+            color: white;
+        }
+    }
+}
+
+#breadcrumb {
+    padding: 0.5rem 0;
+    background-color: $concrete;
+
+    .breadcrumb-list {
+        margin-bottom: 0;
+        padding-left: 0;
+
+        li {
+            display: inline-block;
+        }
+    
+        li + li::before {
+            display: inline-block;
+            content: "";
+            vertical-align: -.125em;
+            height: 1rem;
+            width: 2rem;
+            /* Bootstrap Icons SVG: chevron-right */
+            background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23999' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708' clip-rule='evenodd'/></svg>");
+            background-repeat: no-repeat;
+            background-size: 1rem 1rem;
+            background-position: 0.5rem 0;
+        }
+    }
+}
+
+.ala-page {
+    margin-top: 1rem;
+}
+
+
+.footer-top {
     padding: 30px 0;
     // desktop: padding: 58px 0;
     border-top: 1px solid $gray-300;
