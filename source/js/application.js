@@ -1,3 +1,78 @@
+/*
+ALA 2024 header nav
+*/
+jQuery( document ).ready(function() {
+    const menuItems = document.querySelectorAll(".ala-header-nav-primary-item");
+
+    let expandedItem = null;
+
+    const expandSubMenu = (item) => {
+        const subMenu = item.querySelector("div");
+        const button = item.querySelector("button");
+        expandedItem = item;
+
+        subMenu.setAttribute("aria-hidden","false");
+        button.setAttribute("aria-expanded","true");
+        item.dataset.expanded = "true";
+        subMenu.querySelectorAll("a")[0].focus(); // Focus on the first link in the submenu
+    };
+
+    const collapseSubMenu = (item) => {
+        const subMenu = item.querySelector("div");
+        const button = item.querySelector("button");
+        expandedItem = null;
+
+        subMenu.setAttribute("aria-hidden","true");
+        button.setAttribute("aria-expanded","false");
+        item.dataset.expanded = "false";
+        button.focus(); // Focus back on the button
+    };
+
+    BLAHmenuItems.forEach((item) => {
+        const button = item.querySelector("button");
+
+        button.addEventListener("click", (event) => {
+            if (button.ariaExpanded === "false") {
+                expandSubMenu(item);
+            } else {
+                collapseSubMenu(item);
+            }
+        });
+
+        item.addEventListener("mouseenter", () => {
+            expandSubMenu(item);
+        });
+
+        item.addEventListener("mouseleave", () => {
+            collapseSubMenu(item);
+        });
+
+        // Handling keyboard navigation
+        button.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") { // Space or Enter key
+                event.preventDefault(); // Prevent the default action to stop scrolling when pressing Space
+                if (button.ariaExpanded === "false") {
+                    expandSubMenu(item);
+                } else {
+                    collapseSubMenu(item);
+                }
+            }
+        });
+
+        // Handling tab key inside submenu to loop back to the button
+        const subMenuLinks = item.querySelectorAll("ul a");
+        if (subMenuLinks.length) {
+            const lastLink = subMenuLinks[subMenuLinks.length - 1];
+            lastLink.addEventListener("keydown", (event) => {
+                if (event.key === "Tab" && !event.shiftKey) {
+                    event.preventDefault();
+                    button.focus(); // Move focus back to the button
+                }
+            });
+        }
+    });
+});
+
 /*!
     Simple JavaScript Templating
     John Resig - https://johnresig.com/ - MIT Licensed
