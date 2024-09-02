@@ -8,8 +8,7 @@
 
 // 2. Include any default variable overrides here
 
-// colour mode (light/dark) automatic based on browser
-$color-mode-type: media-query;
+
 
 // ALA colour palette
 $flamingo: #f26649;
@@ -158,7 +157,15 @@ $link-color-dark: $glacial;
         height: 1rem;
         color: black;
 
-        @media (prefers-color-scheme: dark) {
+        //@media (prefers-color-scheme: dark) {
+        //     color: white;
+        // }
+    }
+}
+
+@include color-mode(dark) {
+    .ala-header-desktop-tools {
+        svg, use {
             color: white;
         }
     }
