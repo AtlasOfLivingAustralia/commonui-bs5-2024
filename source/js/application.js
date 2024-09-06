@@ -14,7 +14,7 @@ jQuery( document ).ready(function() {
         subMenu.setAttribute("aria-hidden","false");
         button.setAttribute("aria-expanded","true");
         item.dataset.expanded = "true";
-        subMenu.querySelectorAll("a")[0].focus(); // Focus on the first link in the submenu
+        //subMenu.querySelectorAll("a")[0].focus(); // Focus on the first link in the submenu
     };
 
     const collapseSubMenu = (item) => {
@@ -28,7 +28,7 @@ jQuery( document ).ready(function() {
         button.focus(); // Focus back on the button
     };
 
-    BLAHmenuItems.forEach((item) => {
+    menuItems.forEach((item) => {
         const button = item.querySelector("button");
 
         button.addEventListener("click", (event) => {
@@ -39,13 +39,13 @@ jQuery( document ).ready(function() {
             }
         });
 
-        item.addEventListener("mouseenter", () => {
-            expandSubMenu(item);
-        });
+        // item.addEventListener("mouseenter", () => {
+        //     expandSubMenu(item);
+        // });
 
-        item.addEventListener("mouseleave", () => {
-            collapseSubMenu(item);
-        });
+        // item.addEventListener("mouseleave", () => {
+        //     collapseSubMenu(item);
+        // });
 
         // Handling keyboard navigation
         button.addEventListener("keydown", (event) => {

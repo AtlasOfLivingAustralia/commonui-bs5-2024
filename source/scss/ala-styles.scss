@@ -138,8 +138,12 @@ $link-color-dark: $glacial;
     div {
         margin-left: 2rem;
     }
-    .ala-header-contact, .ala-header-dark-toggle, .ala-header-search-toggle {
+    .ala-header-contact, .ala-header-search-toggle {
         margin-top: 0.45rem;
+    }
+
+    .ala-header-dark-toggle .dropdown-toggle::after {
+        vertical-align: 0.1em;
     }
 
     .ala-header-contact {
@@ -214,6 +218,9 @@ $link-color-dark: $glacial;
                 }
 
             }
+            button:focus {
+                border-bottom: 4px solid $rust;
+            }
 
             .ala-header-nav-secondary-panel {
                 position: absolute;
@@ -257,6 +264,9 @@ $link-color-dark: $glacial;
                                 margin-top: 1rem;
                                 list-style: none;
                             }
+                            a:hover, a:focus {
+                                text-decoration: underline;
+                            }
                             a::after {
                                 display: inline-block;
                                 content: "";
@@ -274,12 +284,37 @@ $link-color-dark: $glacial;
                 }
             }
 
+            &:hover {
+                button {
+                    border-bottom: 4px solid $rust;
+                }
+            }
+
+            button[aria-expanded="true"]{
+                span {
+                    /* Bootstrap Icons SVG: chevron-up */
+                    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/></svg>");
+
+                    @media (prefers-color-scheme: dark) {
+                        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/></svg>");
+                    }
+                }
+
+                +.ala-header-nav-secondary-panel {
+                    opacity: 1;
+                    transform: rotateX(0);
+                    visibility: visible;
+                }
+            }
+/*
             &:hover, &:focus-within {
+
                 button {
                     border-bottom: 4px solid $rust;
 
                     span {
                         /* Bootstrap Icons SVG: chevron-up */
+/*
                         background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/></svg>");
 
                         @media (prefers-color-scheme: dark) {
@@ -293,6 +328,7 @@ $link-color-dark: $glacial;
                     visibility: visible;
                 }
             }
+*/
         }
 
     }
