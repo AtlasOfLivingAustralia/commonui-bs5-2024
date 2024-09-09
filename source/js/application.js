@@ -7,6 +7,11 @@ jQuery( document ).ready(function() {
     let expandedItem = null;
 
     const expandSubMenu = (item) => {
+        // close all currently-open submenus
+        menuItems.forEach((allitem) => {
+            collapseSubMenu(allitem);
+        });
+
         const subMenu = item.querySelector("div");
         const button = item.querySelector("button");
         expandedItem = item;
