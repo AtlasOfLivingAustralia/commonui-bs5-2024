@@ -128,10 +128,24 @@ $link-color-dark: $glacial;
 
 .ala-header-desktop-logo {
     justify-content: flex-start;
+
+    img {
+        width: 186px;
+        height: 27px;
+        content:url(../img/ALA_Logo_light_186.png);
+    }
+}
+
+.ala-header-nav-toggle {
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: black;
+    }
 }
 
 .ala-header-desktop-tools {
-    display: flex;
+    // display: flex;
     flex-direction: row;
     justify-content: flex-end;
 
@@ -160,19 +174,34 @@ $link-color-dark: $glacial;
         width: 1rem;
         height: 1rem;
         color: black;
-
-        //@media (prefers-color-scheme: dark) {
-        //     color: white;
-        // }
     }
 }
 
 @include color-mode(dark) {
-    .ala-header-desktop-tools {
+    .ala-header-desktop-tools, .ala-header-nav-toggle {
         svg, use {
             color: white;
         }
     }
+    .ala-header-desktop-logo img {
+        content:url(../img/ALA_Logo_dark_186.png);
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .ala-header-desktop-logo {
+         img {
+            width: 325px;
+            height: 47px;
+            content:url(../img/ALA_Logo_light_325.png);
+        }
+    }
+    @include color-mode(dark) {
+        .ala-header-desktop-logo img {
+            content:url(../img/ALA_Logo_dark_325.png);
+        }
+    }
+
 }
 
 .ala-header-nav {
@@ -306,31 +335,7 @@ $link-color-dark: $glacial;
                     visibility: visible;
                 }
             }
-/*
-            &:hover, &:focus-within {
-
-                button {
-                    border-bottom: 4px solid $rust;
-
-                    span {
-                        /* Bootstrap Icons SVG: chevron-up */
-/*
-                        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/></svg>");
-
-                        @media (prefers-color-scheme: dark) {
-                            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/></svg>");
-                        }
-                    }
-                }
-                .ala-header-nav-secondary-panel {
-                    opacity: 1;
-                    transform: rotateX(0);
-                    visibility: visible;
-                }
-            }
-*/
         }
-
     }
 }
 
