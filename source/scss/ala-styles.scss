@@ -116,8 +116,14 @@ $link-color-dark: $glacial;
 }
 
 .ala-header {
-    margin-top: 1.75rem;
-    margin-bottom: 0;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+@include media-breakpoint-up(lg) {
+    .ala-header {
+        margin-top: 1.75rem;
+        margin-bottom: 0;
+    }
 }
 
 .ala-header-top-desktop {
@@ -174,6 +180,10 @@ $link-color-dark: $glacial;
         width: 1rem;
         height: 1rem;
         color: black;
+    }
+
+    .active svg {
+        color: white;
     }
 }
 
