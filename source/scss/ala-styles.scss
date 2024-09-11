@@ -126,13 +126,19 @@ $link-color-dark: $glacial;
     }
 }
 
-.ala-header-top-desktop {
+.ala-header-compact {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.ala-header-desktop-logo {
+.ala-header-top-expanded {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ala-header-compact-logo {
     justify-content: flex-start;
 
     img {
@@ -150,8 +156,8 @@ $link-color-dark: $glacial;
     }
 }
 
-.ala-header-desktop-tools {
-    // display: flex;
+.ala-header-expanded-tools {
+    display: flex;
     flex-direction: row;
     justify-content: flex-end;
 
@@ -188,18 +194,18 @@ $link-color-dark: $glacial;
 }
 
 @include color-mode(dark) {
-    .ala-header-desktop-tools, .ala-header-nav-toggle {
+    .ala-header-expanded-tools, .ala-header-nav-toggle {
         svg, use {
             color: white;
         }
     }
-    .ala-header-desktop-logo img {
+    .ala-header-compact-logo img {
         content:url(../img/ALA_Logo_dark_186.png);
     }
 }
 
 @include media-breakpoint-up(lg) {
-    .ala-header-desktop-logo {
+    .ala-header-expanded-logo {
          img {
             width: 325px;
             height: 47px;
@@ -207,7 +213,7 @@ $link-color-dark: $glacial;
         }
     }
     @include color-mode(dark) {
-        .ala-header-desktop-logo img {
+        .ala-header-expanded-logo img {
             content:url(../img/ALA_Logo_dark_325.png);
         }
     }
@@ -223,8 +229,10 @@ $link-color-dark: $glacial;
         margin-bottom: 0;
     
         > li {
-            display: inline-block;
-            margin-right: 2rem;
+            display: block;
+            margin-right: 0;
+            padding-top: 0.8rem;
+            border-top: 1px solid $gray-300;
             --bs-link-color-rgb: $charcoal;
             @media (prefers-color-scheme: dark) {
                 --bs-link-color-rgb: white;
@@ -238,7 +246,7 @@ $link-color-dark: $glacial;
                 display: inline-block;
                 background-color: transparent;
                 padding-bottom: 0.8rem;
-                border-bottom: 4px solid transparent;
+                border-bottom: none;
 
                 span {
                     display: inline-block;
@@ -251,72 +259,91 @@ $link-color-dark: $glacial;
                     background-size: 1rem 1rem;
                     background-position: 0 0.2rem;
                     background-color: transparent;
-                    @media (prefers-color-scheme: dark) {
-                        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/></svg>");
-                    }
+                }
+
+                &:focus {
+                    //
                 }
 
             }
-            button:focus {
-                border-bottom: 4px solid $rust;
-            }
 
             .ala-header-nav-secondary-panel {
-                position: absolute;
-                left: 0;
-                width: 100%;
+                // position: absolute;
+                // left: 0;
+                // width: 100%;
                 border-top: 1px solid $gray-300;
 
-                background: linear-gradient(180deg, $white 0%, $white 66%, $concrete 100%), var(--bs-body-bg);
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+                display: none;
+                // background: linear-gradient(180deg, $white 0%, $white 66%, $concrete 100%), var(--bs-body-bg);
+                // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 
                 // hiding by default
-                visibility: hidden;
-                opacity: 0.3;
-                transform: rotateX(-90deg);
-                transform-origin: top center;
+                // visibility: hidden;
+                // opacity: 0.3;
+                // transform: rotateX(-90deg);
+                // transform-origin: top center;
                 //transition: 280ms all 120ms ease-out;
 
                 .container {
-                    margin-top: 2.2rem;
-                    margin-bottom: 2.2rem;
+                    // margin-top: 2.2rem;
+                    // margin-bottom: 2.2rem;
 
                     .ala-header-secondary-panel-meta {
-                        border-right: 1px solid $gray-300;
-                        padding-right: 3rem;
-                        h4 {
-                            font-size: 1.8rem;
-                            margin-bottom: 1.1rem;
-                        }
+                        // visibility: hidden;
+                        // border-right: 1px solid $gray-300;
+                        // padding-right: 3rem;
+                        // h4 {
+                        //     font-size: 1.8rem;
+                        //     margin-bottom: 1.1rem;
+                        // }
 
                     }
 
+                    .ala-header-secondary-panel-list {
+                        padding-left: 0;
+                        padding-right: 0;
 
-                    .ala-header-nav-secondary-list {
-                        list-style: none;
-                        padding-left: 3rem;
-
-                        li {
-                            margin-bottom: 1rem;
-
-                            .ala-header-nav-tertiary-list {
-                                margin-top: 1rem;
-                                list-style: none;
+                        .ala-header-nav-secondary-list {
+                            list-style: none;
+                            padding-left: 1rem;
+                            // padding-left: 3rem;
+    
+                            li {
+                                margin-top: -1px; // avoid doubling border-top
+                                padding-top: 0.9rem;
+                                padding-bottom: 0.9rem;
+                                border-top: 1px solid $gray-300;
+    
+                                .ala-header-nav-tertiary-list {
+                                    margin-top: 1rem;
+                                    margin-bottom: -1rem;
+                                    list-style: none;
+                                    padding-left: 1rem;
+                                    // border-top: 1px solid $gray-300;
+                                }
+                                a:hover, a:focus {
+                                    text-decoration: underline;
+                                }
+                                a::after {
+                                    display: inline-block;
+                                    content: "";
+                                    vertical-align: -.125em;
+                                    height: 1rem;
+                                    width: 2rem;
+                                    /* Bootstrap Icons SVG: arrow-right */
+                                    background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23999' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8' clip-rule='evenodd'/></svg>");
+                                    background-repeat: no-repeat;
+                                    background-size: 1rem 1rem;
+                                    background-position: 0.5rem 0;
+                                }
                             }
-                            a:hover, a:focus {
-                                text-decoration: underline;
-                            }
-                            a::after {
-                                display: inline-block;
-                                content: "";
-                                vertical-align: -.125em;
-                                height: 1rem;
-                                width: 2rem;
-                                /* Bootstrap Icons SVG: arrow-right */
-                                background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23999' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8' clip-rule='evenodd'/></svg>");
-                                background-repeat: no-repeat;
-                                background-size: 1rem 1rem;
-                                background-position: 0.5rem 0;
+                        }
+
+                        &:first-child {
+                            .ala-header-nav-secondary-list {
+                                li:first-child {
+                                    border-top: none;
+                                }
                             }
                         }
                     }
@@ -325,26 +352,140 @@ $link-color-dark: $glacial;
 
             &:hover {
                 button {
-                    border-bottom: 4px solid $rust;
+                    // border-bottom: 4px solid $rust;
                 }
             }
 
             button[aria-expanded="true"]{
+                color: $primary;
+
                 span {
                     /* Bootstrap Icons SVG: chevron-up */
-                    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/></svg>");
-
-                    @media (prefers-color-scheme: dark) {
-                        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/></svg>");
-                    }
+                    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23c44d34' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/></svg>");
                 }
 
                 +.ala-header-nav-secondary-panel {
-                    opacity: 1;
-                    transform: rotateX(0);
-                    visibility: visible;
+                    // opacity: 1;
+                    // transform: rotateX(0);
+                    // visibility: visible;
+                    display: block;
+                    // background: linear-gradient(180deg, $white 0%, $white 66%, $concrete 100%), var(--bs-body-bg);
+                    // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
                 }
             }
+
+        }
+    }
+}
+
+@include color-mode(dark) {
+    .ala-header-nav >ul >li button span {
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/></svg>");
+    }
+    .ala-header-nav >ul >li button[aria-expanded="true"]{
+        color: $flamingo;
+
+        span {
+            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23f26649' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/></svg>");
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .ala-header-nav {
+        > ul {
+            > li {
+                display: inline-block;
+                margin-right: 2rem;
+                border-top: none;
+                padding-top: none;
+
+                &:hover {
+                    button {
+                        border-bottom: 4px solid $rust;
+                    }
+                }
+
+                &[data-expanded="true"]{
+                    button {
+                        border-bottom: 4px solid $rust;
+                    }
+                }
+
+                button {
+                    border-bottom: 4px solid transparent;
+
+                    &:focus {
+                        border-bottom: 4px solid $rust;
+                    }
+
+                    &[aria-expanded="true"]{
+                        color: var(--bs-link-color-rgb);
+        
+                        +.ala-header-nav-secondary-panel {
+                            opacity: 1;
+                            transform: rotateX(0);
+                            visibility: visible;
+                            // background: linear-gradient(180deg, $white 0%, $white 66%, $concrete 100%), var(--bs-body-bg);
+                            background: var(--bs-body-bg);
+                            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+                        }
+                    }
+
+                }
+
+                .ala-header-nav-secondary-panel {
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    visibility: hidden;
+                    opacity: 0.3;
+                    transform: rotateX(-90deg);
+                    transform-origin: top center;
+
+                    .container {
+                        margin-top: 2.2rem;
+                        margin-bottom: 2.2rem;
+    
+                        .ala-header-secondary-panel-meta {
+                            // display: block;
+                            // visibility: visible;
+                            border-right: 1px solid $gray-300;
+                            padding-right: 3rem;
+                            h4 {
+                                font-size: 1.8rem;
+                                margin-bottom: 1.1rem;
+                            }
+                        }
+
+                        .ala-header-secondary-panel-list {
+                            padding-left: calc(var(--bs-gutter-x)* 0.5);
+                            padding-right: calc(var(--bs-gutter-x)* 0.5);
+
+                            .ala-header-nav-secondary-list {
+                                padding-left: 3rem;
+    
+                                li {
+                                    margin-bottom: 1rem;
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                    border-top: none;
+    
+                                    .ala-header-nav-tertiary-list {
+                                        border-top: none;
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include color-mode(dark) {
+        .ala-header-nav >ul >li button[aria-expanded="true"] {
+            color: var(--bs-link-color-rgb);
         }
     }
 }
@@ -387,7 +528,6 @@ $link-color-dark: $glacial;
 
 .footer-top {
     padding: 30px 0;
-    // desktop: padding: 58px 0;
     border-top: 1px solid $gray-300;
     @media (prefers-color-scheme: dark) {
         border-top: 1px solid $gray-800;

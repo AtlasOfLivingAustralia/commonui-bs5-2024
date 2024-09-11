@@ -20,6 +20,7 @@ jQuery( document ).ready(function() {
         button.setAttribute("aria-expanded","true");
         item.dataset.expanded = "true";
         //subMenu.querySelectorAll("a")[0].focus(); // Focus on the first link in the submenu
+        button.focus(); // Focus on the button
     };
 
     const collapseSubMenu = (item) => {
