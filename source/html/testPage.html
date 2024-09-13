@@ -40,6 +40,20 @@ HEADER_HERE
     </div>
 </section> -->
 
+<script>
+    // signedIn / signedOut
+    const switchAuth = (newClass) => {
+        const authItems = document.querySelectorAll(".ala-header-auth");
+        authItems.forEach((item) => {
+            // remove existing auth state classes
+            item.classList.remove('signedIn');
+            item.classList.remove('signedOut');
+            // apply new auth state class
+            item.classList.add(newClass);
+        });
+    };
+</script>
+
 <div class="ala-default-block">
 	<div class="container" id="content">
 
@@ -54,6 +68,8 @@ HEADER_HERE
                         <h2 class="wp-block-heading" class="wp-block-heading" id="what-is-the-ala" style="margin-top: 1rem;">What is the ALA?</h2>
                         
                         <p>The Atlas of Living Australia (ALA) is a collaborative, digital, open infrastructure that pulls together Australian biodiversity data from multiple sources, making it accessible and reusable.</p>
+                        
+                        <p>Test <a onclick="switchAuth('signedIn')" href="javascript:void(0);">logged-in</a> and <a onclick="switchAuth('signedOut')" href="javascript:void(0);">logged-out</a> state.</p>
                         
                         <p>The ALA helps to create a more detailed picture of Australia’s biodiversity for scientists, policy makers, environmental planners and land managers, industry and the general public, and enables them&nbsp;to work more efficiently.</p>
                         

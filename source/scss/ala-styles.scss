@@ -172,6 +172,13 @@ $link-color-dark: $glacial;
         vertical-align: 0.1em;
     }
 
+    .ala-header-sign-in.signedOut, .ala-header-my-profile.signedIn, .ala-header-sign-out.signedIn {
+        display: block;
+    }
+    .ala-header-sign-in.signedIn, .ala-header-my-profile.signedOut, .ala-header-sign-out.signedOut {
+        display: none;
+    }
+
     .ala-header-contact {
         --bs-link-color-rgb: $charcoal;
         @media (prefers-color-scheme: dark) {
