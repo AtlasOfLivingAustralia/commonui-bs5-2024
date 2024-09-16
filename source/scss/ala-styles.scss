@@ -136,6 +136,7 @@ $link-color-dark: $glacial;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-top: 1.5rem;
 }
 
 .ala-header-compact-logo {
@@ -159,10 +160,13 @@ $link-color-dark: $glacial;
 .ala-header-expanded-tools {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
 
-    div {
+    >div {
         margin-left: 2rem;
+    }
+    >div:first-child {
+        margin-left: 0;
     }
     .ala-header-contact, .ala-header-search-toggle {
         margin-top: 0.45rem;
@@ -172,11 +176,21 @@ $link-color-dark: $glacial;
         vertical-align: 0.1em;
     }
 
-    .ala-header-sign-in.signedOut, .ala-header-my-profile.signedIn, .ala-header-sign-out.signedIn {
+    .ala-header-sign-up.signedOut, .ala-header-sign-in.signedOut, .ala-header-my-profile.signedIn, .ala-header-sign-out.signedIn {
         display: block;
     }
-    .ala-header-sign-in.signedIn, .ala-header-my-profile.signedOut, .ala-header-sign-out.signedOut {
+    .ala-header-sign-up.signedIn, .ala-header-sign-in.signedIn, .ala-header-my-profile.signedOut, .ala-header-sign-out.signedOut {
         display: none;
+    }
+
+    .ala-header-auth-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        div {
+            margin-left: 0.4rem;
+        }
     }
 
     .ala-header-contact {
@@ -212,12 +226,18 @@ $link-color-dark: $glacial;
 }
 
 @include media-breakpoint-up(lg) {
+    .ala-header-top-expanded {
+        padding-top: 0;
+    }
     .ala-header-expanded-logo {
          img {
             width: 325px;
             height: 47px;
             content:url(../img/ALA_Logo_light_325.png);
         }
+    }
+    .ala-header-expanded-tools {
+        justify-content: flex-end;
     }
     @include color-mode(dark) {
         .ala-header-expanded-logo img {
