@@ -87,11 +87,42 @@
       <div class="ala-header-compact-logo">
         <a href="==homeDomain=="><img src="img/ALA_Logo_light_186.png" alt="Atlas of Living Australia logo" /></a>
       </div>
+      <div class="ala-header-compact-tools">
+      <div class="ala-header-dark-toggle ala-header-dark-toggle-compact dropdown">
+        <button class="btn btn-link nav-link dropdown-toggle" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (auto)">
+          <svg class="bi my-1 theme-icon-active"><use href="#circle-half" fill="currentColor"></use></svg>
+          <span class="d-none ms-2" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+              <svg class="bi me-2 opacity-60" fill="currentColor"><use href="#sun-fill"></use></svg>
+              Light
+              <svg class="bi ms-auto d-none" fill="currentColor"><use href="#check2"></use></svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+              <svg class="bi me-2 opacity-60" fill="currentColor"><use href="#moon-stars-fill"></use></svg>
+              Dark
+              <svg class="bi ms-auto d-none" fill="currentColor"><use href="#check2"></use></svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+              <svg class="bi me-2 opacity-60" fill="currentColor"><use href="#circle-half"></use></svg>
+              Auto
+              <svg class="bi ms-auto d-none" fill="currentColor"><use href="#check2"></use></svg>
+            </button>
+          </li>
+        </ul>
+    </div>
       <div class="ala-header-nav-toggle">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ala-header-expanded" aria-controls="ala-header-expanded" aria-expanded="false" aria-label="Toggle navigation">
           <svg fill="currentColor"><use href="#list"></use></svg>
         </button>
       </div>
+    </div>
     </div>
     <div class="ala-header-top-expanded d-lg-block collapse" id="ala-header-expanded">
       <div class="row">
@@ -100,7 +131,7 @@
         </div>
         <div class="ala-header-expanded-tools col-lg-8">
 
-            <div class="ala-header-dark-toggle dropdown">
+            <div class="ala-header-dark-toggle ala-header-dark-toggle-expanded dropdown">
                 <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (auto)">
                   <svg class="bi my-1 theme-icon-active"><use href="#circle-half" fill="currentColor"></use></svg>
                   <span class="d-none ms-2" id="bd-theme-text">Toggle theme</span>
