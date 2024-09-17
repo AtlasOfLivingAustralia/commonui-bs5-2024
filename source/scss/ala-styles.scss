@@ -32,6 +32,7 @@ $forest: #38613d;
 $glacial: #c3edef;
 $pinot: #921d11;
 $lightgrey: #d9d9d9;
+$grey: #637073;
 
 $primary:       $rust;
 $secondary:     $silver;
@@ -251,7 +252,14 @@ $link-color-dark: $glacial;
     }
 }
 
+.ala-header-wrapper {
+    border-bottom: 1px solid $lightgrey;
+}
+
 @include color-mode(dark) {
+    .ala-header-wrapper {
+        border-bottom: 1px solid $grey;
+    }
     .ala-acknowledgement-header-background {
         background-color: $charcoal;
     }
@@ -581,10 +589,6 @@ $link-color-dark: $glacial;
             color: var(--bs-link-color-rgb);
         }
     }
-}
-
-.ala-header-wrapper {
-    border-bottom: 1px solid $gray-300;
 }
 
 #breadcrumb {
