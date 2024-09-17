@@ -31,6 +31,7 @@ $sand: #ffedcf;
 $forest: #38613d;
 $glacial: #c3edef;
 $pinot: #921d11;
+$lightgrey: #d9d9d9;
 
 $primary:       $rust;
 $secondary:     $silver;
@@ -115,15 +116,34 @@ $link-color-dark: $glacial;
     --bs-gutter-x: 1.75rem;
 }
 
+.ala-header-wrapper {
+    padding-top: 0.75rem;
+}
+
 .ala-header {
-    margin-top: 0.75rem;
+    // margin-top: 0.75rem;
     margin-bottom: 0.75rem;
 }
 @include media-breakpoint-up(lg) {
+    .ala-header-wrapper {
+        padding-top: 1.75rem;
+    }
     .ala-header {
-        margin-top: 1.75rem;
+        // margin-top: 1.75rem;
         margin-bottom: 0;
     }
+}
+
+.ala-acknowledgement-header-background {
+    background-color: #d9d9d9;
+}
+
+.ala-acknowledgement-header {
+    --bs-alert-color: $charcoal;
+    --bs-alert-bg: transparent;
+    --bs-alert-border-color: transparent;
+    --bs-alert-link-color: $charcoal;
+    margin-bottom: 0;
 }
 
 .ala-header-compact {
@@ -232,6 +252,16 @@ $link-color-dark: $glacial;
 }
 
 @include color-mode(dark) {
+    .ala-acknowledgement-header-background {
+        background-color: $charcoal;
+    }
+    .ala-acknowledgement-header {
+        --bs-alert-color: white;
+        --bs-alert-link-color: white;
+    }
+    .ala-header-wrapper {
+        background-color: black;
+    }
     .ala-header-expanded-tools, .ala-header-nav-toggle {
         svg, use {
             color: white;
