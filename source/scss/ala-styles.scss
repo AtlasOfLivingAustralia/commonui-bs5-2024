@@ -107,9 +107,9 @@ $link-color-dark: $glacial;
 // outline buttons with different text colour
 .btn-outline-primary  {
     --bs-btn-color: $charcoal;
-    @media (prefers-color-scheme: dark) {
-        --bs-btn-color: $concrete;
-    }
+    // @media (prefers-color-scheme: dark) {
+    //     --bs-btn-color: $concrete;
+    // }
 }
 
 // slightly wider left/right gutters
@@ -219,9 +219,9 @@ $link-color-dark: $glacial;
 
     .ala-header-contact {
         --bs-link-color-rgb: $charcoal;
-        @media (prefers-color-scheme: dark) {
-            --bs-link-color-rgb: white;
-        }
+        // @media (prefers-color-scheme: dark) {
+        //     --bs-link-color-rgb: white;
+        // }
         a {
             text-decoration: none;
         }
@@ -243,6 +243,9 @@ $link-color-dark: $glacial;
 }
 
 @include color-mode(dark) {
+    .btn-outline-primary  {
+        --bs-btn-color: $concrete;
+    }
     .ala-header-wrapper {
         border-bottom: 1px solid $grey;
     }
@@ -264,6 +267,11 @@ $link-color-dark: $glacial;
     .ala-header-dark-toggle {
         svg, use {
             color: white;
+        }
+    }
+    .ala-header-tools {
+        .ala-header-contact {
+            --bs-link-color-rgb: white;
         }
     }
     .ala-header-logo img {
@@ -336,9 +344,9 @@ $link-color-dark: $glacial;
             padding-top: 0.8rem;
             border-top: 1px solid $gray-300;
             --bs-link-color-rgb: $charcoal;
-            @media (prefers-color-scheme: dark) {
-                --bs-link-color-rgb: white;
-            }
+            // @media (prefers-color-scheme: dark) {
+            //     --bs-link-color-rgb: white;
+            // }
             a {
                 text-decoration: none;
             }
@@ -481,14 +489,20 @@ $link-color-dark: $glacial;
 }
 
 @include color-mode(dark) {
-    .ala-header-nav >ul >li button span {
-        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/></svg>");
-    }
-    .ala-header-nav >ul >li button[aria-expanded="true"]{
-        color: $flamingo;
 
-        span {
-            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23f26649' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/></svg>");
+    .ala-header-nav >ul >li {
+
+        --bs-link-color-rgb: white;
+
+        button span {
+            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/></svg>");
+        }
+        button[aria-expanded="true"]{
+            color: $flamingo;
+
+            span {
+                background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23f26649' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/></svg>");
+            }
         }
     }
 }
@@ -631,10 +645,16 @@ $link-color-dark: $glacial;
     border-top: 1px solid $lightgrey;
 
     .ala-footer-ala-logo {
-        width: 325px;
-        height: 47px;
-        background-size: auto;
+        // width: 325px;
+        // height: 47px;
+        // background-size: auto;
         margin-bottom: 1.4rem;
+
+        img {
+            width: 186px;
+            height: 27px;
+            content:url(../img/ALA_Logo_light_186.png);
+        }
     }
 
     .ala-footer-partner-text {
@@ -717,17 +737,6 @@ $link-color-dark: $glacial;
                 svg {
                     width: 1rem;
                     height: 1rem;
-                    //color: white;
-
-                    @media (prefers-color-scheme: dark) {
-                        color: black;
-                    }
-                }
-
-                @media (prefers-color-scheme: dark) {
-                    --bs-btn-bg: white;
-                    --bs-btn-hover-bg: #eee;
-                    --bs-btn-active-bg: #ddd;
                 }
             }
 
@@ -760,6 +769,12 @@ $link-color-dark: $glacial;
     .footer-top {
         border-top: 1px solid $grey;
 
+        .ala-footer-ala-logo {
+            img {
+                content:url(../img/ALA_Logo_dark_186.png);
+            }
+        }
+
         .ala-footer-partner-logos {
             .ala-footer-ncris-logo {
                 img {
@@ -769,6 +784,20 @@ $link-color-dark: $glacial;
             .ala-footer-gbif-logo {
                 img {
                     content:url(../img/gbif-dot-org-white-logo.svg);
+                }
+            }
+        }
+        .ala-footer-socials {
+            li {
+                button {
+
+                    --bs-btn-bg: white;
+                    --bs-btn-hover-bg: #eee;
+                    --bs-btn-active-bg: #ddd;
+
+                    svg {
+                        color: black;
+                    }
                 }
             }
         }
@@ -805,6 +834,14 @@ $link-color-dark: $glacial;
     .footer-top {
         padding: 58px 0;
 
+        .ala-footer-ala-logo {
+            img {
+                width: 325px;
+                height: 47px;
+                content:url(../img/ALA_Logo_light_325.png);
+            }
+        }
+
         .ala-footer-partner-text {
             width: 335px;
         }
@@ -821,6 +858,16 @@ $link-color-dark: $glacial;
             p {
                 margin-bottom: 2rem;
             }    
+        }
+    }
+
+    @include color-mode(dark) {
+        .footer-top {
+            .ala-footer-ala-logo {
+                img {
+                    content:url(../img/ALA_Logo_dark_325.png);
+                }
+            }
         }
     }
 }
