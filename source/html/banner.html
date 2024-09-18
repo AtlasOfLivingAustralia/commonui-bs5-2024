@@ -123,385 +123,328 @@
 </div>
 <div class="ala-header-wrapper">
   <div class="container ala-header">
-    <div class="ala-header-compact d-lg-none">
-      <div class="ala-header-compact-logo">
-        <a href="==homeDomain=="><img src="img/ALA_Logo_light_186.png" alt="Atlas of Living Australia logo" /></a>
-      </div>
-      <div class="ala-header-compact-tools">
-        <div class="ala-header-dark-toggle ala-header-dark-toggle-compact dropdown">
-          <button class="btn btn-link nav-link dropdown-toggle" id="bd-theme" type="button" aria-expanded="false"
-            data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (auto)">
-            <svg class="bi my-1 theme-icon-active">
-              <use href="#circle-half" fill="currentColor"></use>
-            </svg>
-            <span class="d-none ms-2" id="bd-theme-text">Toggle theme</span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
-            <li>
-              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-                aria-pressed="false">
-                <svg class="bi me-2 opacity-60" fill="currentColor">
-                  <use href="#sun-fill"></use>
-                </svg>
-                Light
-                <svg class="bi ms-auto d-none" fill="currentColor">
-                  <use href="#check2"></use>
-                </svg>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-                aria-pressed="false">
-                <svg class="bi me-2 opacity-60" fill="currentColor">
-                  <use href="#moon-stars-fill"></use>
-                </svg>
-                Dark
-                <svg class="bi ms-auto d-none" fill="currentColor">
-                  <use href="#check2"></use>
-                </svg>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-                aria-pressed="true">
-                <svg class="bi me-2 opacity-60" fill="currentColor">
-                  <use href="#circle-half"></use>
-                </svg>
-                Auto
-                <svg class="bi ms-auto d-none" fill="currentColor">
-                  <use href="#check2"></use>
-                </svg>
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div class="ala-header-nav-toggle">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ala-header-expanded"
-            aria-controls="ala-header-expanded" aria-expanded="false" aria-label="Toggle navigation">
-            <svg fill="currentColor">
-              <use href="#list"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
+    <div class="row">
+    <div class="ala-header-logo col-8 col-lg-4">
+      <a href="==homeDomain=="><img src="img/ALA_Logo_light_186.png" alt="Atlas of Living Australia logo" /></a>
     </div>
-    <div class="ala-header-top-expanded d-lg-block collapse" id="ala-header-expanded">
-      <div class="row">
-        <div class="ala-header-expanded-logo d-none d-lg-block col-lg-4">
-          <a href="==homeDomain=="><img src="img/ALA_Logo_light_325.png" alt="Atlas of Living Australia logo" /></a>
-        </div>
-        <div class="ala-header-expanded-tools col-lg-8">
-
-          <div class="ala-header-dark-toggle ala-header-dark-toggle-expanded dropdown">
-            <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle" id="bd-theme" type="button"
-              aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (auto)">
-              <svg class="bi my-1 theme-icon-active">
-                <use href="#circle-half" fill="currentColor"></use>
+    <div class="ala-header-toggles col-4 col-lg-1">
+      <div class="ala-header-dark-toggle dropdown">
+        <button class="btn btn-link nav-link dropdown-toggle" id="bd-theme" type="button" aria-expanded="false"
+          data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (auto)">
+          <svg class="bi my-1 theme-icon-active">
+            <use href="#circle-half" fill="currentColor"></use>
+          </svg>
+          <span class="d-none ms-2" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+              aria-pressed="false">
+              <svg class="bi me-2 opacity-60" fill="currentColor">
+                <use href="#sun-fill"></use>
               </svg>
-              <span class="d-none ms-2" id="bd-theme-text">Toggle theme</span>
+              Light
+              <svg class="bi ms-auto d-none" fill="currentColor">
+                <use href="#check2"></use>
+              </svg>
             </button>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
-              <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-                  aria-pressed="false">
-                  <svg class="bi me-2 opacity-60" fill="currentColor">
-                    <use href="#sun-fill"></use>
-                  </svg>
-                  Light
-                  <svg class="bi ms-auto d-none" fill="currentColor">
-                    <use href="#check2"></use>
-                  </svg>
-                </button>
-              </li>
-              <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-                  aria-pressed="false">
-                  <svg class="bi me-2 opacity-60" fill="currentColor">
-                    <use href="#moon-stars-fill"></use>
-                  </svg>
-                  Dark
-                  <svg class="bi ms-auto d-none" fill="currentColor">
-                    <use href="#check2"></use>
-                  </svg>
-                </button>
-              </li>
-              <li>
-                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-                  aria-pressed="true">
-                  <svg class="bi me-2 opacity-60" fill="currentColor">
-                    <use href="#circle-half"></use>
-                  </svg>
-                  Auto
-                  <svg class="bi ms-auto d-none" fill="currentColor">
-                    <use href="#check2"></use>
-                  </svg>
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div class="ala-header-search-toggle">
-            <a href="#"><svg width="14" height="15" viewBox="0 0 14 15" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M10.0625 5.6875C10.0625 4.12891 9.21484 2.70703 7.875 1.91406C6.50781 1.12109 4.83984 1.12109 3.5 1.91406C2.13281 2.70703 1.3125 4.12891 1.3125 5.6875C1.3125 7.27344 2.13281 8.69531 3.5 9.48828C4.83984 10.2812 6.50781 10.2812 7.875 9.48828C9.21484 8.69531 10.0625 7.27344 10.0625 5.6875ZM9.21484 10.1719C8.23047 10.9375 7 11.375 5.6875 11.375C2.54297 11.375 0 8.83203 0 5.6875C0 2.57031 2.54297 0 5.6875 0C8.80469 0 11.375 2.57031 11.375 5.6875C11.375 7.02734 10.9102 8.25781 10.1445 9.24219L13.8086 12.8789C14.0547 13.1523 14.0547 13.5625 13.8086 13.8086C13.5352 14.082 13.125 14.082 12.8789 13.8086L9.21484 10.1719Z" />
-              </svg></a>
-          </div>
-          <div class="ala-header-contact"><a href="mailto:support@ala.org.au">Contact us</a></div>
-          <div class="ala-header-auth-group">
-            <div class="ala-header-auth ala-header-sign-up ::loginStatus::"><a href="==signUpURL=="
-                class="btn btn-outline-primary ala-header-button-sign-up">Create account</a></div>
-            <div class="ala-header-auth ala-header-sign-in ::loginStatus::"><a href="::loginURL::"
-                class="btn btn-outline-primary ala-header-button-sign-in">Sign in</a></div>
-            <div class="ala-header-auth ala-header-my-profile ::loginStatus::"><a href="==profileURL=="
-                class="btn btn-outline-primary ala-header-button-my-profile">My profile</a></div>
-            <div class="ala-header-auth ala-header-sign-out ::loginStatus::"><a href="::logoutURL::"
-                class="btn btn-outline-primary ala-header-button-sign-out">Sign out</a></div>
-          </div>
-        </div>
-      </div>
-
-      <nav class="ala-header-nav" aria-label="Main Navigation">
-        <ul class="ala-header-nav-primary">
-          <li class="ala-header-nav-primary-item" data-expanded="false">
-            <button class="ala-header-nav-primary-button" aria-label="Submenu of Species &amp; records"
-              aria-expanded="false" aria-controls="ala-header-nav-secondary-species">
-              Species &amp; records
-              <span></span>
-            </button>
-            <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-species">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
-                    <h4>Species &amp; records</h4>
-                    <p class="ala-header-nav-secondary-description">Learn about species, their characteristics, where
-                      they have been found, and more.
-                      Search, view and download species occurrence records or datasets.
-                    </p>
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                    <ul class="ala-header-nav-secondary-list">
-                      <li><a href="https://bie.ala.org.au/">Search species</a></li>
-                      <li><a href="https://biocache.ala.org.au/search#tab_simpleSearch">Search and download records</a>
-                      </li>
-                      <li><a href="https://collections.ala.org.au/datasets">Search datasets</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                    <ul class="ala-header-nav-secondary-list">
-                      <li><a href="#">Search collections</a>
-                        <ul class="ala-header-nav-tertiary-list">
-                          <li><a href="https://specimens.ala.org.au/">Browse museum and herbaria specimens</a></li>
-                          <li><a href="https://collections.ala.org.au/">Find a natural history collection</a></li>
-                          <li><a href="#">Specialised collections</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="https://lists.ala.org.au/iconic-species">Australian iconic species</a></li>
-                      <li><a href="https://profiles.ala.org.au/">Curated species information</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
           </li>
-          <li class="ala-header-nav-primary-item" data-expanded="false">
-            <button class="ala-header-nav-primary-button" aria-label="Submenu of Explore by location"
-              aria-expanded="false" aria-controls="ala-header-nav-secondary-explore">
-              Explore by location
-              <span></span>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+              aria-pressed="false">
+              <svg class="bi me-2 opacity-60" fill="currentColor">
+                <use href="#moon-stars-fill"></use>
+              </svg>
+              Dark
+              <svg class="bi ms-auto d-none" fill="currentColor">
+                <use href="#check2"></use>
+              </svg>
             </button>
-            <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-explore">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
-                    <h4>Explore by location</h4>
-                    <p class="ala-header-nav-secondary-description">Discover species in your local area or a defined
-                      region. Interrogate and explore relationships between species,
-                      location and environment with our advanced mapping tool.
-                    </p>
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                    <ul class="ala-header-nav-secondary-list">
-                      <li><a href="https://biocache.ala.org.au/explore/your-area">Address or location</a></li>
-                      <li><a href="https://regions.ala.org.au/">Management areas</a></li>
-                      <li><a href="https://spatial.ala.org.au/">Advanced mapping</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                  </div>
-                </div>
-              </div>
-            </div>
           </li>
-          <li class="ala-header-nav-primary-item" data-expanded="false">
-            <button class="ala-header-nav-primary-button" aria-label="Submenu of Contribute data" aria-expanded="false"
-              aria-controls="ala-header-nav-secondary-contribute">
-              Contribute data
-              <span></span>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+              aria-pressed="true">
+              <svg class="bi me-2 opacity-60" fill="currentColor">
+                <use href="#circle-half"></use>
+              </svg>
+              Auto
+              <svg class="bi ms-auto d-none" fill="currentColor">
+                <use href="#check2"></use>
+              </svg>
             </button>
-            <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-contribute">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
-                    <h4>Contribute data</h4>
-                    <p class="ala-header-nav-secondary-description">Share your dataset or species observations with the
-                      ALA, or contribute to digitisation projects.
-                      Discover, participate in, or start data collection projects.
-                    </p>
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                    <ul class="ala-header-nav-secondary-list">
-                      <li><a
-                          href="https://support.ala.org.au/support/solutions/articles/6000261427-sharing-a-dataset-with-the-ala">Share
-                          a dataset</a></li>
-                      <li><a href="https://lists.ala.org.au/public/speciesLists">Upload or find a list of species</a>
-                      </li>
-                      <li><a href="https://www.ala.org.au/biocollect/">Set up a citizen science project</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                    <ul class="ala-header-nav-secondary-list">
-                      <li><a href="https://volunteer.ala.org.au/">Help digitise collections</a></li>
-                      <li><a href="https://www.ala.org.au/home/record-a-sighting/">Record a sighting</a></li>
-                      <li><a href="https://biocollect.ala.org.au/acsa">Discover data collection projects</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="ala-header-nav-primary-item" data-expanded="false">
-            <button class="ala-header-nav-primary-button" aria-label="Submenu of Code &amp; API" aria-expanded="false"
-              aria-controls="ala-header-nav-secondary-code">
-              Code &amp; API
-              <span></span>
-            </button>
-            <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-code">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
-                    <h4>Code &amp; API</h4>
-                    <p class="ala-header-nav-secondary-description">Access and interrogate data in the ALA using R or
-                      Python, and learn from data visualisation case studies.
-                      Explore our API documentation portal for developers.
-                    </p>
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                    <ul class="ala-header-nav-secondary-list">
-                      <li><a href="https://galah.ala.org.au/">Access data using R and Python</a></li>
-                      <li><a href="https://docs.ala.org.au/">API documentation</a></li>
-                      <li><a href="https://github.com/AtlasOfLivingAustralia/">Github repositories</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                    <ul class="ala-header-nav-secondary-list">
-                      <li><a href="https://sds.ala.org.au/">Sensitive Data Service</a></li>
-                      <li><a href="https://labs.ala.org.au/">Data visualisation case studies</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="ala-header-nav-primary-item" data-expanded="false">
-            <button class="ala-header-nav-primary-button" aria-label="Submenu of About us" aria-expanded="false"
-              aria-controls="ala-header-nav-secondary-about">
-              About us
-              <span></span>
-            </button>
-            <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-about">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
-                    <h4>About us</h4>
-                    <p class="ala-header-nav-secondary-description">Learn more about the ALA, our governance, strategy,
-                      news
-                      and any employment or funding opportunities.
-                    </p>
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                    <ul class="ala-header-nav-secondary-list">
-                      <li><a href="https://www.ala.org.au/about-ala/">About us</a></li>
-                      <li><a href="https://www.ala.org.au/contact-us/">Contact us</a></li>
-                      <li>Work with us
-                        <ul class="ala-header-nav-tertiary-list">
-                          <li><a href="https://www.ala.org.au/careers/">Careers</a></li>
-                          <li><a href="https://www.ala.org.au/internships/">Internships</a></li>
-                        </ul>
-                      </li>
-                      <li>Grants and opportunities
-                        <ul class="ala-header-nav-tertiary-list">
-                          <li><a href="https://living-atlases.gbif.org/">Living Atlases</a></li>
-                          <li><a href="https://www.ala.org.au/abdmp/">Fund your data project</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                    <ul class="ala-header-nav-secondary-list">
-                      <li><a href="https://www.ala.org.au/blog/">News and events</a>
-                        <ul class="ala-header-nav-tertiary-list">
-                          <li><a href="https://www.ala.org.au/blog/">News archive</a></li>
-                        </ul>
-                      </li>
-                      <li>Governance and publications
-                        <ul class="ala-header-nav-tertiary-list">
-                          <li><a href="https://www.ala.org.au/governance/">Governance and advisory board</a></li>
-                          <li><a href="#">Strategy and reports</a></li>
-                          <li><a href="https://dashboard.ala.org.au/">Our data at a glance</a></li>
-                          <li><a href="https://www.ala.org.au/publications/">Case studies</a></li>
-                          <li><a href="https://www.ala.org.au/ala-cited-publications/">ALA-cited publications</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="ala-header-nav-primary-item" data-expanded="false">
-            <button class="ala-header-nav-primary-button" aria-label="Submenu of Help &amp; resources"
-              aria-expanded="false" aria-controls="ala-header-nav-secondary-help">
-              Help &amp; resources
-              <span></span>
-            </button>
-            <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-help">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
-                    <h4>Help &amp; resources</h4>
-                    <p class="ala-header-nav-secondary-description">Access support and training for ALA tools and
-                      services.
-                      Learn more about ALA&apos;s specialised work programs in each of our hubs.
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                    <ul class="ala-header-nav-secondary-list">
-                      <li><a href="https://support.ala.org.au/support/home">Help articles</a>
-                        <ul class="ala-header-nav-tertiary-list">
-                          <li><a href="https://support.ala.org.au/support/solutions/6000137994">Data help</a></li>
-                          <li><a href="https://support.ala.org.au/support/solutions/6000138053">Tools and apps help</a>
-                          </li>
-                          <li><a href="https://support.ala.org.au/support/solutions/6000138349">Spatial portal help</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a href="https://www.ala.org.au/ala-logo-and-identity/">ALA logo and identity</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-4 ala-header-secondary-panel-list">
-                    <ul class="ala-header-nav-secondary-list">
-                      <li><a href="#">Training resources hub</a></li>
-                      <li><a href="https://www.ala.org.au/biosecurity/">Biosecurity hub</a></li>
-                      <li><a href="https://www.ala.org.au/indigenous-ecological-knowledge/">Indigenous engagement hub
-                          (IEK)</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
           </li>
         </ul>
-      </nav>
+      </div>
+      <div class="ala-header-nav-toggle d-lg-none">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".ala-header-collapse"
+          aria-controls="ala-header-collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <svg fill="currentColor">
+            <use href="#list"></use>
+          </svg>
+        </button>
+      </div>
     </div>
+    <div class="ala-header-tools ala-header-collapse collapse col-12">
+      <div class="ala-header-search">
+        <a href="#"><svg width="14" height="15" viewBox="0 0 14 15" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10.0625 5.6875C10.0625 4.12891 9.21484 2.70703 7.875 1.91406C6.50781 1.12109 4.83984 1.12109 3.5 1.91406C2.13281 2.70703 1.3125 4.12891 1.3125 5.6875C1.3125 7.27344 2.13281 8.69531 3.5 9.48828C4.83984 10.2812 6.50781 10.2812 7.875 9.48828C9.21484 8.69531 10.0625 7.27344 10.0625 5.6875ZM9.21484 10.1719C8.23047 10.9375 7 11.375 5.6875 11.375C2.54297 11.375 0 8.83203 0 5.6875C0 2.57031 2.54297 0 5.6875 0C8.80469 0 11.375 2.57031 11.375 5.6875C11.375 7.02734 10.9102 8.25781 10.1445 9.24219L13.8086 12.8789C14.0547 13.1523 14.0547 13.5625 13.8086 13.8086C13.5352 14.082 13.125 14.082 12.8789 13.8086L9.21484 10.1719Z" />
+          </svg></a>
+      </div>
+      <div class="ala-header-contact"><a href="mailto:support@ala.org.au">Contact us</a></div>
+      <div class="ala-header-auth-group">
+        <div class="ala-header-auth ala-header-sign-up ::loginStatus::"><a href="==signUpURL=="
+            class="btn btn-outline-primary ala-header-button-sign-up">Create account</a></div>
+        <div class="ala-header-auth ala-header-sign-in ::loginStatus::"><a href="::loginURL::"
+            class="btn btn-outline-primary ala-header-button-sign-in">Sign in</a></div>
+        <div class="ala-header-auth ala-header-my-profile ::loginStatus::"><a href="==profileURL=="
+            class="btn btn-outline-primary ala-header-button-my-profile">My profile</a></div>
+        <div class="ala-header-auth ala-header-sign-out ::loginStatus::"><a href="::logoutURL::"
+            class="btn btn-outline-primary ala-header-button-sign-out">Sign out</a></div>
+      </div>
+    </div>
+  </div>
+    <nav class="ala-header-nav ala-header-collapse collapse" aria-label="Main Navigation">
+      <ul class="ala-header-nav-primary">
+        <li class="ala-header-nav-primary-item" data-expanded="false">
+          <button class="ala-header-nav-primary-button" aria-label="Submenu of Species &amp; records"
+            aria-expanded="false" aria-controls="ala-header-nav-secondary-species">
+            Species &amp; records
+            <span></span>
+          </button>
+          <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-species">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
+                  <h4>Species &amp; records</h4>
+                  <p class="ala-header-nav-secondary-description">Learn about species, their characteristics, where
+                    they have been found, and more.
+                    Search, view and download species occurrence records or datasets.
+                  </p>
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                  <ul class="ala-header-nav-secondary-list">
+                    <li><a href="https://bie.ala.org.au/">Search species</a></li>
+                    <li><a href="https://biocache.ala.org.au/search#tab_simpleSearch">Search and download records</a>
+                    </li>
+                    <li><a href="https://collections.ala.org.au/datasets">Search datasets</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                  <ul class="ala-header-nav-secondary-list">
+                    <li><a href="#">Search collections</a>
+                      <ul class="ala-header-nav-tertiary-list">
+                        <li><a href="https://specimens.ala.org.au/">Browse museum and herbaria specimens</a></li>
+                        <li><a href="https://collections.ala.org.au/">Find a natural history collection</a></li>
+                        <li><a href="#">Specialised collections</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="https://lists.ala.org.au/iconic-species">Australian iconic species</a></li>
+                    <li><a href="https://profiles.ala.org.au/">Curated species information</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="ala-header-nav-primary-item" data-expanded="false">
+          <button class="ala-header-nav-primary-button" aria-label="Submenu of Explore by location"
+            aria-expanded="false" aria-controls="ala-header-nav-secondary-explore">
+            Explore by location
+            <span></span>
+          </button>
+          <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-explore">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
+                  <h4>Explore by location</h4>
+                  <p class="ala-header-nav-secondary-description">Discover species in your local area or a defined
+                    region. Interrogate and explore relationships between species,
+                    location and environment with our advanced mapping tool.
+                  </p>
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                  <ul class="ala-header-nav-secondary-list">
+                    <li><a href="https://biocache.ala.org.au/explore/your-area">Address or location</a></li>
+                    <li><a href="https://regions.ala.org.au/">Management areas</a></li>
+                    <li><a href="https://spatial.ala.org.au/">Advanced mapping</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="ala-header-nav-primary-item" data-expanded="false">
+          <button class="ala-header-nav-primary-button" aria-label="Submenu of Contribute data" aria-expanded="false"
+            aria-controls="ala-header-nav-secondary-contribute">
+            Contribute data
+            <span></span>
+          </button>
+          <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-contribute">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
+                  <h4>Contribute data</h4>
+                  <p class="ala-header-nav-secondary-description">Share your dataset or species observations with the
+                    ALA, or contribute to digitisation projects.
+                    Discover, participate in, or start data collection projects.
+                  </p>
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                  <ul class="ala-header-nav-secondary-list">
+                    <li><a
+                        href="https://support.ala.org.au/support/solutions/articles/6000261427-sharing-a-dataset-with-the-ala">Share
+                        a dataset</a></li>
+                    <li><a href="https://lists.ala.org.au/public/speciesLists">Upload or find a list of species</a>
+                    </li>
+                    <li><a href="https://www.ala.org.au/biocollect/">Set up a citizen science project</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                  <ul class="ala-header-nav-secondary-list">
+                    <li><a href="https://volunteer.ala.org.au/">Help digitise collections</a></li>
+                    <li><a href="https://www.ala.org.au/home/record-a-sighting/">Record a sighting</a></li>
+                    <li><a href="https://biocollect.ala.org.au/acsa">Discover data collection projects</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="ala-header-nav-primary-item" data-expanded="false">
+          <button class="ala-header-nav-primary-button" aria-label="Submenu of Code &amp; API" aria-expanded="false"
+            aria-controls="ala-header-nav-secondary-code">
+            Code &amp; API
+            <span></span>
+          </button>
+          <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-code">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
+                  <h4>Code &amp; API</h4>
+                  <p class="ala-header-nav-secondary-description">Access and interrogate data in the ALA using R or
+                    Python, and learn from data visualisation case studies.
+                    Explore our API documentation portal for developers.
+                  </p>
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                  <ul class="ala-header-nav-secondary-list">
+                    <li><a href="https://galah.ala.org.au/">Access data using R and Python</a></li>
+                    <li><a href="https://docs.ala.org.au/">API documentation</a></li>
+                    <li><a href="https://github.com/AtlasOfLivingAustralia/">Github repositories</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                  <ul class="ala-header-nav-secondary-list">
+                    <li><a href="https://sds.ala.org.au/">Sensitive Data Service</a></li>
+                    <li><a href="https://labs.ala.org.au/">Data visualisation case studies</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="ala-header-nav-primary-item" data-expanded="false">
+          <button class="ala-header-nav-primary-button" aria-label="Submenu of About us" aria-expanded="false"
+            aria-controls="ala-header-nav-secondary-about">
+            About us
+            <span></span>
+          </button>
+          <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-about">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
+                  <h4>About us</h4>
+                  <p class="ala-header-nav-secondary-description">Learn more about the ALA, our governance, strategy,
+                    news
+                    and any employment or funding opportunities.
+                  </p>
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                  <ul class="ala-header-nav-secondary-list">
+                    <li><a href="https://www.ala.org.au/about-ala/">About us</a></li>
+                    <li><a href="https://www.ala.org.au/contact-us/">Contact us</a></li>
+                    <li>Work with us
+                      <ul class="ala-header-nav-tertiary-list">
+                        <li><a href="https://www.ala.org.au/careers/">Careers</a></li>
+                        <li><a href="https://www.ala.org.au/internships/">Internships</a></li>
+                      </ul>
+                    </li>
+                    <li>Grants and opportunities
+                      <ul class="ala-header-nav-tertiary-list">
+                        <li><a href="https://living-atlases.gbif.org/">Living Atlases</a></li>
+                        <li><a href="https://www.ala.org.au/abdmp/">Fund your data project</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                  <ul class="ala-header-nav-secondary-list">
+                    <li><a href="https://www.ala.org.au/blog/">News and events</a>
+                      <ul class="ala-header-nav-tertiary-list">
+                        <li><a href="https://www.ala.org.au/blog/">News archive</a></li>
+                      </ul>
+                    </li>
+                    <li>Governance and publications
+                      <ul class="ala-header-nav-tertiary-list">
+                        <li><a href="https://www.ala.org.au/governance/">Governance and advisory board</a></li>
+                        <li><a href="#">Strategy and reports</a></li>
+                        <li><a href="https://dashboard.ala.org.au/">Our data at a glance</a></li>
+                        <li><a href="https://www.ala.org.au/publications/">Case studies</a></li>
+                        <li><a href="https://www.ala.org.au/ala-cited-publications/">ALA-cited publications</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="ala-header-nav-primary-item" data-expanded="false">
+          <button class="ala-header-nav-primary-button" aria-label="Submenu of Help &amp; resources"
+            aria-expanded="false" aria-controls="ala-header-nav-secondary-help">
+            Help &amp; resources
+            <span></span>
+          </button>
+          <div class="ala-header-nav-secondary-panel" aria-hidden="true" id="ala-header-nav-secondary-help">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 ala-header-secondary-panel-meta d-none d-lg-block">
+                  <h4>Help &amp; resources</h4>
+                  <p class="ala-header-nav-secondary-description">Access support and training for ALA tools and
+                    services.
+                    Learn more about ALA&apos;s specialised work programs in each of our hubs.
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                  <ul class="ala-header-nav-secondary-list">
+                    <li><a href="https://support.ala.org.au/support/home">Help articles</a>
+                      <ul class="ala-header-nav-tertiary-list">
+                        <li><a href="https://support.ala.org.au/support/solutions/6000137994">Data help</a></li>
+                        <li><a href="https://support.ala.org.au/support/solutions/6000138053">Tools and apps help</a>
+                        </li>
+                        <li><a href="https://support.ala.org.au/support/solutions/6000138349">Spatial portal help</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="https://www.ala.org.au/ala-logo-and-identity/">ALA logo and identity</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 ala-header-secondary-panel-list">
+                  <ul class="ala-header-nav-secondary-list">
+                    <li><a href="#">Training resources hub</a></li>
+                    <li><a href="https://www.ala.org.au/biosecurity/">Biosecurity hub</a></li>
+                    <li><a href="https://www.ala.org.au/indigenous-ecological-knowledge/">Indigenous engagement hub
+                        (IEK)</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
   </div>
 </div>
