@@ -646,25 +646,27 @@ $link-color-dark: $glacial;
         list-style: none;
         margin-bottom: 2rem;
 
-        li {
-            margin-right: 1.3rem;
-        }
-
         .ala-footer-ncris-logo {
-            margin-right: 1.1rem;
+            margin-right: 1.9rem;
 
-            img, source {
+            img {
                 width: 65px;
+                content:url(../img/NCRIS-PROVIDER.png);
             }
         }
         
         .ala-footer-csiro-logo {
-            width: 47px;
+            margin-right: 0.7rem;
+            
+            img {
+                width: 47px;
+            }
         }
 
         .ala-footer-gbif-logo {
-            img, source {
+            img {
                 width: 102px;
+                content:url(../img/gbif-dot-org-green-logo.svg);
             }
         }
     }
@@ -754,7 +756,22 @@ $link-color-dark: $glacial;
         }
     }
 }
-
+@include color-mode(dark) {
+    .footer-top {
+        .ala-footer-partner-logos {
+            .ala-footer-ncris-logo {
+                img {
+                    content:url(../img/NCRIS-PROVIDER-RGB-REV.png);
+                }
+            }
+            .ala-footer-gbif-logo {
+                img {
+                    content:url(../img/gbif-dot-org-white-logo.svg);
+                }
+            }
+        }
+    }
+}
 
 // acknowledgement block in footer
 .footer-bottom {
