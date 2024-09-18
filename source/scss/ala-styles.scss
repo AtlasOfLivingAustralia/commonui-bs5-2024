@@ -628,10 +628,7 @@ $link-color-dark: $glacial;
 
 .footer-top {
     padding: 30px 0;
-    border-top: 1px solid $gray-300;
-    @media (prefers-color-scheme: dark) {
-        border-top: 1px solid $gray-800;
-    }
+    border-top: 1px solid $lightgrey;
 
     .ala-footer-ala-logo {
         width: 325px;
@@ -761,6 +758,8 @@ $link-color-dark: $glacial;
 }
 @include color-mode(dark) {
     .footer-top {
+        border-top: 1px solid $grey;
+
         .ala-footer-partner-logos {
             .ala-footer-ncris-logo {
                 img {
