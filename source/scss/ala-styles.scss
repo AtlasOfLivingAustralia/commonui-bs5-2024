@@ -618,6 +618,10 @@ $link-color-dark: $glacial;
 
         li {
             display: inline-block;
+
+            a {
+                text-decoration: none;
+            }
         }
     
         li + li::before {
