@@ -630,8 +630,8 @@ $link-color-dark: $glacial;
             vertical-align: -.125em;
             height: 1rem;
             width: 2rem;
-            /* Bootstrap Icons SVG: chevron-right */
-            background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23999' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708' clip-rule='evenodd'/></svg>");
+            /* Bootstrap Icons SVG: chevron-left */
+            background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23999' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0' clip-rule='evenodd'/></svg>");
             background-repeat: no-repeat;
             background-size: 1rem 1rem;
             background-position: 0.5rem 0;
