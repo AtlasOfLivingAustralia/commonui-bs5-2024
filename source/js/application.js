@@ -77,6 +77,26 @@ jQuery( document ).ready(function() {
             });
         }
     });
+
+    // dismissible acknowledgement banner
+    if (storageAvailable("localStorage")) {
+        var alaAckBannerDismissed = localStorage.getItem('ala-ack-banner-dismissed') || '';
+        var alaAckYearAhead = new Date().setFullYear(new Date().getFullYear() + 1);
+    
+        if (alaAckBannerDismissed < new Date()) {
+            // banner has never been dismissed, or was dismissed over a year ago
+            $('.ala-acknowledgement-header-background').css("display", "block");
+            localStorage.removeItem('ala-ack-banner-dismissed');
+        }
+    
+        $('.ala-acknowledgement-header').on('closed.bs.alert', function () {
+            localStorage.setItem('ala-ack-banner-dismissed',alaAckYearAhead);
+        })
+    } else {
+        // local storage not available, fall back to non-persistent dismissible banner
+        $('.ala-acknowledgement-header-background').css("display", "block");
+    }
+
 });
 
 /*!
@@ -313,3 +333,31 @@ jQuery( document ).ready(function() {
         }
     })
 });
+
+// check that storage is available, e.g. storageAvailable("localStorage")
+function storageAvailable(type) {
+    let storage;
+    try {
+        storage = window[type];
+        const x = "__storage_test__";
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    } catch (e) {
+        return (
+            e instanceof DOMException &&
+            // everything except Firefox
+            (e.code === 22 ||
+                // Firefox
+                e.code === 1014 ||
+                // test name field too, because code might not be present
+                // everything except Firefox
+                e.name === "QuotaExceededError" ||
+                // Firefox
+                e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            storage &&
+            storage.length !== 0
+        );
+    }
+}
