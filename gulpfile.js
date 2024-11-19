@@ -96,6 +96,24 @@ function testHTMLPage() {
         .pipe(dest(paths.html.dest));
 };
 
+function generateHandlebars(cb) {
+    src(paths.html.src)
+        .pipe(replace(/::containerClass::/g, 'container-fluid'))
+        .pipe(replace(/::headerFooterServer::/g, '{{ headerFooterServer }}'))
+        .pipe(replace(/::loginStatus::/g, 'signedOut'))
+        .pipe(replace(/::loginURL::/g, '{{ loginURL }}'))
+        .pipe(replace(/::logoutURL::/g, '{{ logoutURL }}'))
+        .pipe(replace(/::searchServer::/g, '{{ searchServer }}'))
+        .pipe(replace(/::searchPath::/g, '{{ searchPath }}'))
+        .pipe(replace(/==homeDomain==/g, '{{ homeDomain }}'))
+        .pipe(replace(/==signUpURL==/g, '{{ signUpURL }}'))
+        .pipe(replace(/==profileURL==/g, '{{ profileURL }}'))
+        .pipe(replace(/==fathomID==/g, '{{ fathomID }}'))
+        .pipe(rename({extname: '.hbs'}))
+        .pipe(dest(paths.html.dest));
+    cb();
+}
+
 function html(cb) {
     src(paths.html.src)
         .pipe(replace(/==homeDomain==/g, buildvars.homeDomain))
@@ -147,7 +165,7 @@ var css = parallel(bootstrapCSS, autocompleteCSS, otherCSSFiles);
 
 var js = parallel(jQuery, bootstrapJS, autocompleteJS, otherJsFiles);
 
-var build = parallel(css, testHTMLPage, html, js, images);
+var build = parallel(css, testHTMLPage, html, generateHandlebars, js, images);
 
 exports.otherCSSFiles = otherCSSFiles;
   
@@ -155,5 +173,6 @@ exports.default = build;
 exports.css = css;
 exports.html = series([testHTMLPage, html]);
 exports.images = images;
+exports.hbs = generateHandlebars;
 exports.js = js;
 exports.build = build;
