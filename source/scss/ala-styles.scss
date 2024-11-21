@@ -642,9 +642,11 @@ $link-color-dark: $glacial;
 
 .ala-page {
     margin-top: 1rem;
+    margin-bottom: 1rem;
 
     > article {
         margin-top: 1rem;
+        margin-bottom: 1rem;
 
         header.entry-header {
             margin-bottom: 1rem;
@@ -656,6 +658,7 @@ $link-color-dark: $glacial;
     
         > article {
             margin-top: 2rem;
+            margin-bottom: 2rem;
 
             header.entry-header {
                 margin-bottom: 2rem;
