@@ -642,8 +642,27 @@ $link-color-dark: $glacial;
 
 .ala-page {
     margin-top: 1rem;
-}
 
+    > article {
+        margin-top: 1rem;
+
+        header.entry-header {
+            margin-bottom: 1rem;
+        }
+    }
+}
+@include media-breakpoint-up(lg) {
+    .ala-page {
+    
+        > article {
+            margin-top: 2rem;
+
+            header.entry-header {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
 
 .footer-top {
     padding: 30px 0;
