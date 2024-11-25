@@ -134,6 +134,36 @@ $link-color-dark: $glacial;
         margin-bottom: 0;
     }
 }
+.ala-admin-message {
+    .system-message {
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .alert-danger {
+        background-color: $pinot;
+        color: white;
+        border: none;
+        a {
+            color: white;
+        }
+    }
+    .alert-warning {
+        background-color: $honey;
+        color: $charcoal;
+        border: none;
+        a {
+            color: $link-color;
+        }
+    }
+    .alert-info {
+        background-color: $lagoon;
+        color: white;
+        border: none;
+        a {
+            color: $link-color-dark;
+        }
+    }
+}
 
 .ala-acknowledgement-header-background {
     background-color: #d9d9d9;
