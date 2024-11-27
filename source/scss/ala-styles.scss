@@ -977,3 +977,158 @@ $link-color-dark: $glacial;
     }
 }
 
+// Home page styles
+
+.home {
+    .ala-hero-block {
+        min-height: 30rem;
+        background-color: $concrete;
+
+        h1 {
+            margin-top: 195px;
+
+            em {
+                display: inline-block;
+                font-style: normal;
+                background: linear-gradient(to right, #c44d34 40%, #f15637);
+                background-clip: text;
+                color: transparent;
+            }
+        }
+    }
+    .ala-quicklinks-block {
+        ul {
+            list-style: none;
+            padding: 1.5rem 0 0.5rem;
+
+            li {
+                display: inline-block;
+                border: 1px solid $lightgrey;
+                border-radius: 5px;
+                width: 100%;
+                margin: 0 0 0.4rem;
+                background-repeat: no-repeat;
+                background-position: left 0.8rem center;
+                background-size: 1.3rem;
+
+                &.ala-quicklink-location {
+                    background-image: url(../img/quicklinks-map.svg);
+                }
+                &.ala-quicklink-records {
+                    background-image: url(../img/quicklinks-folder-magnify.svg);
+                }
+                &.ala-quicklink-collections {
+                    background-image: url(../img/quicklinks-books.svg);
+                }
+                &.ala-quicklink-mapping {
+                    background-image: url(../img/quicklinks-world.svg);
+                }
+
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    padding: 0.7rem 0 0.7rem 2.5rem;
+                    text-decoration: none;
+
+                    span {
+                        color: $charcoal;
+                        font-size: 1.25rem;
+                    }
+                }
+                &:hover {
+                    border-color: $rust;
+                }
+            }
+        }
+
+    }
+    .ala-stats-block {
+        background: linear-gradient(to right, #002a31, #003b45 50%);
+        color: white;
+
+        .stats {
+            background-color: $honey;
+            color: $charcoal;
+        }
+    }
+    .ala-updates-block {
+        background-color: $concrete;
+    }
+    .ala-newsletter-block {
+        background-color: $lightgrey;
+    }
+}
+@include color-mode(dark) {
+    .home {
+        .ala-hero-block {
+            background-color: black;
+            color: white;
+        }
+        .ala-quicklinks-block {
+            ul {
+                li {
+                    border: 1px solid $silver;
+    
+                    &.ala-quicklink-location {
+                        background-image: url(../img/quicklinks-map-dark.svg);
+                    }
+                    &.ala-quicklink-records {
+                        background-image: url(../img/quicklinks-folder-magnify-dark.svg);
+                    }
+                    &.ala-quicklink-collections {
+                        background-image: url(../img/quicklinks-books-dark.svg);
+                    }
+                    &.ala-quicklink-mapping {
+                        background-image: url(../img/quicklinks-world-dark.svg);
+                    }
+    
+                    a {
+                        span {
+                            color: white;
+                        }
+                    }
+                    &:hover {
+                        border-color: $flamingo;
+                    }
+                }
+            }
+    
+        }
+        .ala-updates-block {
+            background-color: $concrete;
+        }
+        .ala-newsletter-block {
+            background-color: $lightgrey;
+        }
+    }
+}
+@include media-breakpoint-up(lg) {
+    .home {
+        .ala-quicklinks-block {
+            ul {
+                padding: 3.8rem 0 2.1rem;
+                margin-left: 2.8%;
+    
+                li {
+                    width: 22%;
+                    max-width: 16rem;
+                    min-height: 8.5rem;
+                    margin: 0 1% 0.4rem;
+                    background-position: center top 1.3rem;
+                    background-size: 2rem;
+    
+                    a {
+                        padding: 4rem 1rem 1rem;
+                        text-align: center;
+                        
+                        span {
+                            max-width: 11rem;
+                            min-height: 3rem;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
