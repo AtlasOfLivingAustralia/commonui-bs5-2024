@@ -33,6 +33,7 @@ $glacial: #c3edef;
 $pinot: #921d11;
 $lightgrey: #d9d9d9;
 $grey: #637073;
+$darkgrey2: #3a3a3a;
 
 $primary:       $rust;
 $secondary:     $silver;
@@ -116,6 +117,20 @@ $link-color-dark: $glacial;
 .row > * {
     --bs-gutter-x: 1.75rem;
 }
+
+.ala-link-arrow::after {
+    display: inline-block;
+    content: "";
+    vertical-align: -0.2em;
+    height: 1rem;
+    width: 1.5rem;
+    /* Bootstrap Icons SVG: arrow-right */
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8' clip-rule='evenodd'/></svg>");
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    background-position: 0.5rem 0;
+}
+
 
 .ala-header-wrapper {
     padding-top: 0.75rem;
@@ -1045,10 +1060,58 @@ $link-color-dark: $glacial;
     .ala-stats-block {
         background: linear-gradient(to right, #002a31, #003b45 50%);
         color: white;
+        font-size: 0.9rem;
 
-        .stats {
+        h2 {
+            margin-top: 2.2rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+        }
+
+        .stats-data {
             background-color: $honey;
             color: $charcoal;
+            border: 1px solid $marigold;
+            border-radius: 10px;
+            margin-top: 1.8rem;
+            margin-bottom: 2.2rem;
+
+            .stats-data-cell {
+                border-bottom: 1px solid rgb(256 256 256 / 50%);
+                padding: 0.5rem 0.2rem 1.1rem;
+            }
+            span {
+                font-size: 1.2rem;
+                font-weight: 500;
+                display: block;
+                margin-bottom: -0.4rem;
+            }
+            a {
+                color: $charcoal;
+                font-size: 0.8rem;
+            }
+            .stats-see-more {
+                display: block;
+                margin-top: 0.6rem;
+                margin-bottom: 0.7rem;
+                text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+        }
+
+        a {
+            color: white;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .stats-image-attrib {
+            text-align: right;
+            padding-bottom: 1.1rem;
+            margin-top: 2.2rem;
         }
     }
     .ala-updates-block {
@@ -1056,6 +1119,16 @@ $link-color-dark: $glacial;
     }
     .ala-newsletter-block {
         background-color: $lightgrey;
+
+        h2 {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            margin-bottom: 1.1rem;
+        }
+        a {
+            background-color: white;
+            margin-bottom: 2rem;
+        }
     }
 }
 @include color-mode(dark) {
@@ -1098,7 +1171,16 @@ $link-color-dark: $glacial;
             background-color: $concrete;
         }
         .ala-newsletter-block {
-            background-color: $lightgrey;
+            background-color: $darkgrey2;
+
+            a {
+                background-color: $rust;
+                color: white;
+
+                &:hover {
+                    background-color: transparent;
+                }
+            }
         }
     }
 }
@@ -1125,6 +1207,94 @@ $link-color-dark: $glacial;
                             max-width: 11rem;
                             min-height: 3rem;
                             display: inline-block;
+                            font-size: 1.15rem;
+                        }
+                    }
+                }
+            }
+        }
+        .ala-stats-block {
+            font-size: 1rem;
+    
+            h2 {
+                margin-top: 5.6rem;
+                margin-bottom: 1.8rem;
+                font-size: 2.8rem;
+            }
+
+            .stats-data {
+                margin-top: 2.2rem;
+
+                .col-lg-3 {
+                    padding: 0;
+                }
+
+                .stats-data-cell {
+                    border-bottom: none;
+                    border-left: 1px solid rgb(256 256 256 / 50%);
+                    margin-top: 1rem;
+                    padding: 0 0.5rem 0 1.2rem;
+                    min-height: 4.7rem;
+                }
+
+                .stats-data-cell-records {
+                    border-left: none !important;
+                    padding-left: 1.3rem;
+                }
+                span {
+                    font-size: 1.6rem;
+                    margin-bottom: 0.2rem;
+                    line-height: 1.6rem;
+                }
+                a {
+                    font-size: 0.9rem;
+                    line-height: 1.2rem;
+                    display: block;
+                }
+                .stats-see-more {
+                    margin-left: 0.6rem;
+                }
+            }
+
+            .stats-text {
+                max-width: 31rem;
+            }
+
+            img {
+                margin-top: 5.5rem;
+            }
+
+            .col-stats-data {
+                padding-right: 0;
+            }
+            .col-stats-image {
+                padding-left: 0;
+            }
+            .stats-image-attrib {
+                padding-bottom: 2.5rem;
+            }
+        }
+        .ala-newsletter-block {
+            h2 {
+                margin-top: 2.7rem;
+                font-size: 2rem;
+                margin-bottom: 2.7rem;
+            }
+            a {
+                margin-top: 2.6rem;
+                float: right;
+            }
+        }
+    }
+}
+@include media-breakpoint-up(xl) {
+    .home {
+        .ala-quicklinks-block {
+            ul {
+                li {
+                    a {
+                        span {
+                            font-size: 1.25rem;
                         }
                     }
                 }
