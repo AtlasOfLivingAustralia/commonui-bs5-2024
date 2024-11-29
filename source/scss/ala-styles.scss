@@ -124,11 +124,17 @@ $link-color-dark: $glacial;
     vertical-align: -0.2em;
     height: 1rem;
     width: 1.5rem;
+    color: $charcoal;
     /* Bootstrap Icons SVG: arrow-right */
     background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8' clip-rule='evenodd'/></svg>");
     background-repeat: no-repeat;
     background-size: 1rem 1rem;
     background-position: 0.5rem 0;
+}
+@include color-mode(dark) {
+    .ala-link-arrow::after {
+        background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8' clip-rule='evenodd'/></svg>");
+    }
 }
 
 
@@ -1114,6 +1120,45 @@ $link-color-dark: $glacial;
             margin-top: 2.2rem;
         }
     }
+    .ala-impact-block {
+        background-image: url(../img/ala-logo-grey-bg.svg);
+        background-size: auto 100%;
+        background-position: right;
+        background-repeat: no-repeat;
+        font-size: 0.9rem;
+        padding-bottom: 2.5rem;
+
+        h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: $rust;
+            margin-top: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 0.9rem;
+        }
+
+        .impact-see-more {
+            text-decoration: none;
+            color: $charcoal;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 1.7rem;
+        }
+
+        img {
+            width: 100%;
+            margin-bottom: 1.3rem;
+            border-radius: 10px;
+        }
+    }
     .ala-updates-block {
         background-color: $concrete;
     }
@@ -1169,6 +1214,18 @@ $link-color-dark: $glacial;
         }
         .ala-updates-block {
             background-color: $concrete;
+        }
+        .ala-impact-block {
+            background-image: url(../img/ala-logo-dark-bg.svg);
+            background-color: black;
+
+            h3 {
+                color: $honey;
+            }
+
+            .impact-see-more {
+                color: white;
+            }
         }
         .ala-newsletter-block {
             background-color: $darkgrey2;
@@ -1272,6 +1329,37 @@ $link-color-dark: $glacial;
             }
             .stats-image-attrib {
                 padding-bottom: 2.5rem;
+            }
+        }
+        .ala-impact-block {
+            font-size: 1rem;
+            padding-bottom: 4rem;
+
+            h2 {
+                margin-top: 5.6rem;
+                margin-bottom: 3.8rem;
+                font-size: 2.8rem;
+                text-align: center;
+            }
+            h3 {
+                font-size: 2rem;
+                margin-top: 2rem;
+                margin-bottom: 1.8rem;
+            }
+            .ala-impact-2-text {
+                position: relative;
+                left: 50%;
+            }
+            .ala-impact-2-image {
+                position: relative;
+                left: -50%;
+            }
+            .col-lg-6 {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
+            }
+            img {
+                margin-bottom: 3rem;
             }
         }
         .ala-newsletter-block {
