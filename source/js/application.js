@@ -78,6 +78,50 @@ jQuery( document ).ready(function() {
         }
     });
 
+    const homeSearchType = document.querySelector(".ala-hero-type-input");
+    const homeSearchTypeButton = homeSearchType.querySelector("button");
+
+    const expandHomeSearchType = () => {
+        const subMenu = homeSearchType.querySelector("div");
+        const button = homeSearchType.querySelector("button");
+
+        subMenu.setAttribute("aria-hidden","false");
+        button.setAttribute("aria-expanded","true");
+        homeSearchType.dataset.expanded = "true";
+        //subMenu.querySelectorAll("a")[0].focus(); // Focus on the first link in the submenu
+        button.focus(); // Focus on the button
+    };
+
+    const collapseHomeSearchType = () => {
+        const subMenu = homeSearchType.querySelector("div");
+        const button = homeSearchType.querySelector("button");
+
+        subMenu.setAttribute("aria-hidden","true");
+        button.setAttribute("aria-expanded","false");
+        homeSearchType.dataset.expanded = "false";
+        button.focus(); // Focus back on the button
+    };
+
+
+    homeSearchTypeButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent the default action to stop scrolling when pressing Space
+        if (homeSearchTypeButton.ariaExpanded === "false") {
+            expandHomeSearchType(homeSearchTypeButton);
+        } else {
+            collapseHomeSearchType(homeSearchTypeButton);
+        }
+    });
+    homeSearchTypeButton.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") { // Space or Enter key
+            event.preventDefault(); // Prevent the default action to stop scrolling when pressing Space
+            if (homeSearchTypeButton.ariaExpanded === "false") {
+                expandHomeSearchType(homeSearchTypeButton);
+            } else {
+                collapseHomeSearchType(homeSearchTypeButton);
+            }
+        }
+    });
+
     // dismissible acknowledgement banner
     if (storageAvailable("localStorage")) {
         var alaAckBannerDismissed = localStorage.getItem('ala-ack-banner-dismissed') || '';

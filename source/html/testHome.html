@@ -40,45 +40,37 @@ HEADER_HERE
                             <!-- </div> -->
                             <label for="searchSubmit" class="visually-hidden">Search</label>
                             <button type="submit" id="searchSubmit" class="ala-hero-submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
-                                    <defs>
-                                        <style>
-                                            .search-icon {
-                                                fill: #fff;
-                                                fill-rule: evenodd;
-                                            }
-                                        </style>
-                                    </defs>
-                                    <path class="search-icon" d="M1524.33,60v1.151a7.183,7.183,0,1,1-2.69.523,7.213,7.213,0,0,1,2.69-.523V60m0,0a8.333,8.333,0,1,0,7.72,5.217A8.323,8.323,0,0,0,1524.33,60h0Zm6.25,13.772-0.82.813,7.25,7.254a0.583,0.583,0,0,0,.82,0,0.583,0.583,0,0,0,0-.812l-7.25-7.254h0Zm-0.69-7.684,0.01,0c0-.006-0.01-0.012-0.01-0.018s-0.01-.015-0.01-0.024a6,6,0,0,0-7.75-3.3l-0.03.009-0.02.006v0a0.6,0.6,0,0,0-.29.293,0.585,0.585,0,0,0,.31.756,0.566,0.566,0,0,0,.41.01V63.83a4.858,4.858,0,0,1,6.32,2.688l0.01,0a0.559,0.559,0,0,0,.29.29,0.57,0.57,0,0,0,.75-0.305A0.534,0.534,0,0,0,1529.89,66.089Z" transform="translate(-1516 -60)"></path>
+                                <svg fill="currentColor">
+                                    <use href="#magnifying-glass"></use>
                                 </svg>
                             </button>
                         </div>
                         <div class="ala-hero-type-input" data-expanded="false">
-                            <button class="ala-hero-type-dropdown-button" aria-label="Search type options" aria-expanded="false"
+                            <button type="button" class="ala-hero-type-dropdown-button" aria-label="Search type options" aria-expanded="false"
                                 aria-controls="ala-hero-type-dropdown-panel">
                                 Search type
                                 <span></span>
                             </button>
-                            <!-- <div class="ala-hero-type-dropdown-panel" aria-hidden="true" id="ala-hero-type-dropdown-panel">
+                            <div class="ala-hero-type-dropdown-panel" aria-hidden="true" id="ala-hero-type-dropdown-panel">
                                 <label for="searchType" class="visually-hidden">
                                     <span>Search type</span>
                                 </label>
                                 <select id="searchType" multiple name="searchType" size="9">
-                                    <option value="all">All</option>
-                                    <option value="species">Species</option>
-                                    <option value="datasets">Data sets</option>
-                                    <option value="lists">Species lists</option>
-                                    <option value="projects">Data projects</option>
-                                    <option value="layers">Environmental layers</option>
-                                    <option value="regions">Regions/localities</option>
-                                    <option value="content">ALA general content</option>
-                                    <option value="help">Help articles</option>
+                                    <option class="search-type-option search-type-all" value="all">All</option>
+                                    <option class="search-type-option search-type-species" value="species">Species</option>
+                                    <option class="search-type-option search-type-datasets" value="datasets">Data sets</option>
+                                    <option class="search-type-option search-type-lists" value="lists">Species lists</option>
+                                    <option class="search-type-option search-type-projects" value="projects">Data projects</option>
+                                    <option class="search-type-option search-type-layers" value="layers">Environmental layers</option>
+                                    <option class="search-type-option search-type-regions" value="regions">Regions/localities</option>
+                                    <option class="search-type-option search-type-content" value="content">ALA general content</option>
+                                    <option class="search-type-option search-type-help" value="help">Help articles</option>
                                 </select>
-                            </div> -->
+                            </div>
                         </div>
                     </form>
                 </div>
-                <div><a href="#">Advanced search</a></div>
+                <div class="ala-hero-advanced"><a href="#">Advanced search</a></div>
 
 			</div><!-- .ala-hero -->
 		</div><!-- .row -->
