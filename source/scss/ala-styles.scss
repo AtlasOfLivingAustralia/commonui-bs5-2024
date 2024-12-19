@@ -1028,6 +1028,9 @@ $link-color-dark: $glacial;
             background-color: white;
             margin-bottom: 1.2rem;
             
+            &:has(button[aria-expanded="true"]) {
+                border-radius: 5px 5px 5px 0;
+            }
             
             .ala-hero-main-input {
                 display: flex;
