@@ -2,19 +2,54 @@
 ALA 2024 header nav
 */
 jQuery( document ).ready(function() {
-    const menuItems = document.querySelectorAll(".ala-header-nav-primary-item");
+    // ALA home page - news block - carousel
+    var alaHomeMultipleCardCarousel = document.querySelector("#newsCarousel");
+    let alaHomeCarouselWidth = $(".carousel-inner")[0].scrollWidth;
+    let alaHomeCarouselCardWidth = $(".carousel-item").width();
+    let alaHomeCarouselScrollPosition = 0;
+    let alaHomeCarouselCardsTotal = 9;
+    let alaHomeCarouselCardsVisible = 3;
 
-    let expandedItem = null;
+    const alaHeaderMenuItems = document.querySelectorAll(".ala-header-nav-primary-item");
+
+    let alaHeaderExpandedItem = null;
+
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        var alaHomeCarousel = new bootstrap.Carousel(alaHomeMultipleCardCarousel, {
+            interval: false,
+            wrap: false
+        });
+        $(".home .carousel-control-next").on("click", function () {
+            // next button in home page news carousel
+            if (alaHomeCarouselScrollPosition < (alaHomeCarouselWidth - alaHomeCarouselCardWidth * (alaHomeCarouselCardsTotal - alaHomeCarouselCardsVisible))) { //check if you can go any further
+                alaHomeCarouselScrollPosition += alaHomeCarouselCardWidth * alaHomeCarouselCardsVisible;  //update scroll position
+              $(".carousel-inner").animate({ scrollLeft: alaHomeCarouselScrollPosition },600); //scroll left
+            }
+        });
+    
+        $(".home .carousel-control-prev").on("click", function () {
+            // prev button in home page news carousel
+            if (alaHomeCarouselScrollPosition > 0) {
+                alaHomeCarouselScrollPosition -= alaHomeCarouselCardWidth * alaHomeCarouselCardsVisible;
+              $(".carousel-inner").animate(
+                { scrollLeft: alaHomeCarouselScrollPosition },
+                600
+              );
+            }
+        });
+    } else {
+        $(alaHomeMultipleCardCarousel).addClass("slide");
+    }
 
     const expandSubMenu = (item) => {
         // close all currently-open submenus
-        menuItems.forEach((allitem) => {
+        alaHeaderMenuItems.forEach((allitem) => {
             collapseSubMenu(allitem);
         });
 
         const subMenu = item.querySelector("div");
         const button = item.querySelector("button");
-        expandedItem = item;
+        alaHeaderExpandedItem = item;
 
         subMenu.setAttribute("aria-hidden","false");
         button.setAttribute("aria-expanded","true");
@@ -26,7 +61,7 @@ jQuery( document ).ready(function() {
     const collapseSubMenu = (item) => {
         const subMenu = item.querySelector("div");
         const button = item.querySelector("button");
-        expandedItem = null;
+        alaHeaderExpandedItem = null;
 
         subMenu.setAttribute("aria-hidden","true");
         button.setAttribute("aria-expanded","false");
@@ -34,7 +69,7 @@ jQuery( document ).ready(function() {
         button.focus(); // Focus back on the button
     };
 
-    menuItems.forEach((item) => {
+    alaHeaderMenuItems.forEach((item) => {
         const button = item.querySelector("button");
 
         button.addEventListener("click", (event) => {
