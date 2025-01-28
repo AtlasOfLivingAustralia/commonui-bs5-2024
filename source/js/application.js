@@ -2,43 +2,93 @@
 ALA 2024 header nav
 */
 jQuery( document ).ready(function() {
-    // ALA home page - news block - carousel
-    var alaHomeMultipleCardCarousel = document.querySelector("#newsCarousel");
-    let alaHomeCarouselWidth = $(".carousel-inner")[0].scrollWidth;
-    let alaHomeCarouselCardWidth = $(".carousel-item").width();
-    let alaHomeCarouselScrollPosition = 0;
-    let alaHomeCarouselCardsTotal = 9;
-    let alaHomeCarouselCardsVisible = 3;
+
 
     const alaHeaderMenuItems = document.querySelectorAll(".ala-header-nav-primary-item");
 
     let alaHeaderExpandedItem = null;
 
-    if (window.matchMedia("(min-width: 768px)").matches) {
-        var alaHomeCarousel = new bootstrap.Carousel(alaHomeMultipleCardCarousel, {
-            interval: false,
-            wrap: false
-        });
-        $(".home .carousel-control-next").on("click", function () {
-            // next button in home page news carousel
-            if (alaHomeCarouselScrollPosition < (alaHomeCarouselWidth - alaHomeCarouselCardWidth * (alaHomeCarouselCardsTotal - alaHomeCarouselCardsVisible))) { //check if you can go any further
-                alaHomeCarouselScrollPosition += alaHomeCarouselCardWidth * alaHomeCarouselCardsVisible;  //update scroll position
-              $(".carousel-inner").animate({ scrollLeft: alaHomeCarouselScrollPosition },600); //scroll left
-            }
-        });
+    const alaHomePage = document.getElementsByClassName("home");
+    // length > 0 if this is the home page
+    if (alaHomePage.length > 0) {
+        // ALA home page - news block - carousel
+        var alaHomeMultipleCardCarousel = $("#newsCarousel");
+        let alaHomeCarouselWidth = $(".carousel-inner")[0].scrollWidth;
+        let alaHomeCarouselCardWidth = $(".carousel-item").width();
+        let alaHomeCarouselScrollPosition = 0;
+        let alaHomeCarouselCardsTotal = 9;
+        let alaHomeCarouselCardsVisible = 3;
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            var alaHomeCarousel = new bootstrap.Carousel(alaHomeMultipleCardCarousel, {
+                interval: false,
+                wrap: false
+            });
+            $(".home .carousel-control-next").on("click", function () {
+                // next button in home page news carousel
+                if (alaHomeCarouselScrollPosition < (alaHomeCarouselWidth - alaHomeCarouselCardWidth * (alaHomeCarouselCardsTotal - alaHomeCarouselCardsVisible))) { //check if you can go any further
+                    alaHomeCarouselScrollPosition += alaHomeCarouselCardWidth * alaHomeCarouselCardsVisible;  //update scroll position
+                $(".carousel-inner").animate({ scrollLeft: alaHomeCarouselScrollPosition },600); //scroll left
+                }
+            });
+        
+            $(".home .carousel-control-prev").on("click", function () {
+                // prev button in home page news carousel
+                if (alaHomeCarouselScrollPosition > 0) {
+                    alaHomeCarouselScrollPosition -= alaHomeCarouselCardWidth * alaHomeCarouselCardsVisible;
+                $(".carousel-inner").animate(
+                    { scrollLeft: alaHomeCarouselScrollPosition },
+                    600
+                );
+                }
+            });
+        } else {
+            $(alaHomeMultipleCardCarousel).addClass("slide");
+        }
+
+        // ALA home page - hero block - search input
+        const homeSearchType = document.querySelector(".ala-hero-type-input");
+        const homeSearchTypeButton = homeSearchType.querySelector("button");
     
-        $(".home .carousel-control-prev").on("click", function () {
-            // prev button in home page news carousel
-            if (alaHomeCarouselScrollPosition > 0) {
-                alaHomeCarouselScrollPosition -= alaHomeCarouselCardWidth * alaHomeCarouselCardsVisible;
-              $(".carousel-inner").animate(
-                { scrollLeft: alaHomeCarouselScrollPosition },
-                600
-              );
+        const expandHomeSearchType = () => {
+            const subMenu = homeSearchType.querySelector("div");
+            const button = homeSearchType.querySelector("button");
+    
+            subMenu.setAttribute("aria-hidden","false");
+            button.setAttribute("aria-expanded","true");
+            homeSearchType.dataset.expanded = "true";
+            //subMenu.querySelectorAll("a")[0].focus(); // Focus on the first link in the submenu
+            button.focus(); // Focus on the button
+        };
+    
+        const collapseHomeSearchType = () => {
+            const subMenu = homeSearchType.querySelector("div");
+            const button = homeSearchType.querySelector("button");
+    
+            subMenu.setAttribute("aria-hidden","true");
+            button.setAttribute("aria-expanded","false");
+            homeSearchType.dataset.expanded = "false";
+            button.focus(); // Focus back on the button
+        };
+    
+    
+        homeSearchTypeButton.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default action to stop scrolling when pressing Space
+            if (homeSearchTypeButton.ariaExpanded === "false") {
+                expandHomeSearchType(homeSearchTypeButton);
+            } else {
+                collapseHomeSearchType(homeSearchTypeButton);
             }
         });
-    } else {
-        $(alaHomeMultipleCardCarousel).addClass("slide");
+        homeSearchTypeButton.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") { // Space or Enter key
+                event.preventDefault(); // Prevent the default action to stop scrolling when pressing Space
+                if (homeSearchTypeButton.ariaExpanded === "false") {
+                    expandHomeSearchType(homeSearchTypeButton);
+                } else {
+                    collapseHomeSearchType(homeSearchTypeButton);
+                }
+            }
+        });
     }
 
     const expandSubMenu = (item) => {
@@ -110,50 +160,6 @@ jQuery( document ).ready(function() {
                     button.focus(); // Move focus back to the button
                 }
             });
-        }
-    });
-
-    const homeSearchType = document.querySelector(".ala-hero-type-input");
-    const homeSearchTypeButton = homeSearchType.querySelector("button");
-
-    const expandHomeSearchType = () => {
-        const subMenu = homeSearchType.querySelector("div");
-        const button = homeSearchType.querySelector("button");
-
-        subMenu.setAttribute("aria-hidden","false");
-        button.setAttribute("aria-expanded","true");
-        homeSearchType.dataset.expanded = "true";
-        //subMenu.querySelectorAll("a")[0].focus(); // Focus on the first link in the submenu
-        button.focus(); // Focus on the button
-    };
-
-    const collapseHomeSearchType = () => {
-        const subMenu = homeSearchType.querySelector("div");
-        const button = homeSearchType.querySelector("button");
-
-        subMenu.setAttribute("aria-hidden","true");
-        button.setAttribute("aria-expanded","false");
-        homeSearchType.dataset.expanded = "false";
-        button.focus(); // Focus back on the button
-    };
-
-
-    homeSearchTypeButton.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent the default action to stop scrolling when pressing Space
-        if (homeSearchTypeButton.ariaExpanded === "false") {
-            expandHomeSearchType(homeSearchTypeButton);
-        } else {
-            collapseHomeSearchType(homeSearchTypeButton);
-        }
-    });
-    homeSearchTypeButton.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") { // Space or Enter key
-            event.preventDefault(); // Prevent the default action to stop scrolling when pressing Space
-            if (homeSearchTypeButton.ariaExpanded === "false") {
-                expandHomeSearchType(homeSearchTypeButton);
-            } else {
-                collapseHomeSearchType(homeSearchTypeButton);
-            }
         }
     });
 
@@ -417,26 +423,18 @@ jQuery( document ).ready(function() {
 function storageAvailable(type) {
     let storage;
     try {
-        storage = window[type];
-        const x = "__storage_test__";
-        storage.setItem(x, x);
-        storage.removeItem(x);
-        return true;
+      storage = window[type];
+      const x = "__storage_test__";
+      storage.setItem(x, x);
+      storage.removeItem(x);
+      return true;
     } catch (e) {
-        return (
-            e instanceof DOMException &&
-            // everything except Firefox
-            (e.code === 22 ||
-                // Firefox
-                e.code === 1014 ||
-                // test name field too, because code might not be present
-                // everything except Firefox
-                e.name === "QuotaExceededError" ||
-                // Firefox
-                e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
-            // acknowledge QuotaExceededError only if there's something already stored
-            storage &&
-            storage.length !== 0
-        );
+      return (
+        e instanceof DOMException &&
+        e.name === "QuotaExceededError" &&
+        // acknowledge QuotaExceededError only if there's something already stored
+        storage &&
+        storage.length !== 0
+      );
     }
-}
+  }
