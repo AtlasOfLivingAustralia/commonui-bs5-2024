@@ -49,6 +49,8 @@ $font-family-sans-serif: Roboto, sans-serif;
 $body-color: $charcoal;
 $body-color-dark: $concrete;
 
+//$font-size-base: 0.875rem;  // 14px :(
+
 $link-color: $ocean;
 $link-color-dark: $glacial;
 
@@ -104,6 +106,10 @@ $link-color-dark: $glacial;
 @import "../vendor/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+
+
+
+
 
 // outline buttons with different text colour
 .btn-outline-primary  {
@@ -721,7 +727,7 @@ $link-color-dark: $glacial;
 }
 
 .ala-page {
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 
     > article {
@@ -754,6 +760,7 @@ $link-color-dark: $glacial;
 }
 @include media-breakpoint-up(lg) {
     .ala-page {
+        margin-top: 3.7rem;
     
         > article {
             margin-top: 2rem;
@@ -768,7 +775,7 @@ $link-color-dark: $glacial;
 .ala-pattern-library {
     .pattern-library-grid {
         display: grid;
-        grid-gap: 0;
+        grid-gap: 1rem;
         grid-template-columns: repeat(12, 1fr);
     }
     .ala-pattern-code {
@@ -780,6 +787,8 @@ $link-color-dark: $glacial;
             display: inline-block;
             vertical-align: middle;
             font-family: monospace;
+            background-color: $concrete;
+            padding: 0.3rem 0.7rem;
         }
     }
     .ala-pattern-example {
