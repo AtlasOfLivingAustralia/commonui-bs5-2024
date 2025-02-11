@@ -20,7 +20,7 @@ var paths = {
         dependencycss: ['source/css/*.css']
     },
     testHtml: {
-        src: ['source/html/testPage.html', 'source/html/testHome.html'],
+        src: ['source/html/testPage.html', 'source/html/testHome.html', 'source/html/patternLibrary*.html'],
         dest: 'build/'
     },
     html: {
