@@ -24,7 +24,7 @@ var paths = {
         dest: 'build/'
     },
     html: {
-        src: ['source/html/banner.html', 'source/html/footer.html', 'source/html/head.html'],
+        src: ['source/html/site-banner.mustache', 'source/html/site-footer.mustache', 'source/html/site-head.mustache'],
         dest: 'build/'
     },
     images: {
@@ -77,38 +77,29 @@ function otherCSSFiles(cb) {
 }
 
 function testHTMLPage() {
-    var header = fs.readFileSync('source/html/banner.html');
-    var footer = fs.readFileSync('source/html/footer.html');
+    var header = fs.readFileSync('source/html/site-banner.mustache');
+    var footer = fs.readFileSync('source/html/site-footer.mustache');
     return src(paths.testHtml.src)
         .pipe(replace('HEADER_HERE', header))
         .pipe(replace('FOOTER_HERE', footer))
-        .pipe(replace(/::containerClass::/g, 'container-fluid'))
-        .pipe(replace(/::headerFooterServer::/g, 'https://www-test.ala.org.au/commonui-bs5-2019/'))
-        .pipe(replace(/::loginStatus::/g, 'signedOut'))
-        .pipe(replace(/::loginURL::/g, 'https://auth.ala.org.au/cas/login'))
-        .pipe(replace(/::logoutURL::/g, 'https://auth.ala.org.au/cas/logout'))
-        .pipe(replace(/::searchServer::/g, 'https://bie.ala.org.au'))
-        .pipe(replace(/::searchPath::/g, '/search'))
-        .pipe(replace(/==homeDomain==/g, buildvars.homeDomain))
-        .pipe(replace(/==signUpURL==/g, buildvars.signUpURL))
-        .pipe(replace(/==profileURL==/g, buildvars.profileURL))
-        .pipe(replace(/==fathomID==/g, buildvars.fathomID))
+        .pipe(replace(/{{loginStatus}}/g, 'signedOut'))
+        .pipe(replace(/{{loginURL}}/g, 'https://auth.ala.org.au/cas/login'))
+        .pipe(replace(/{{logoutURL}}/g, 'https://auth.ala.org.au/cas/logout'))
+        .pipe(replace(/{{searchServer}}/g, 'https://bie.ala.org.au'))
+        .pipe(replace(/{{homeDomain}}/g, buildvars.homeDomain))
+        .pipe(replace(/{{signUpURL}}/g, buildvars.signUpURL))
+        .pipe(replace(/{{profileURL}}/g, buildvars.profileURL))
+        .pipe(replace(/{{fathomID}}/g, buildvars.fathomID))
         .pipe(dest(paths.html.dest));
 };
 
 function generateHandlebars(cb) {
     src(paths.html.src)
-        .pipe(replace(/::containerClass::/g, 'container-fluid'))
-        .pipe(replace(/::headerFooterServer::/g, '{{ headerFooterServer }}'))
-        .pipe(replace(/::loginStatus::/g, 'signedOut'))
-        .pipe(replace(/::loginURL::/g, '{{ loginURL }}'))
-        .pipe(replace(/::logoutURL::/g, '{{ logoutURL }}'))
-        .pipe(replace(/::searchServer::/g, '{{ searchServer }}'))
-        .pipe(replace(/::searchPath::/g, '{{ searchPath }}'))
-        .pipe(replace(/==homeDomain==/g, '{{ homeDomain }}'))
-        .pipe(replace(/==signUpURL==/g, '{{ signUpURL }}'))
-        .pipe(replace(/==profileURL==/g, '{{ profileURL }}'))
-        .pipe(replace(/==fathomID==/g, '{{ fathomID }}'))
+        .pipe(replace(/{{loginStatus}}/g, 'signedOut'))
+        .pipe(replace(/{{homeDomain}}/g, '{{ homeDomain }}'))
+        .pipe(replace(/{{signUpURL}}/g, '{{ signUpURL }}'))
+        .pipe(replace(/{{profileURL}}/g, '{{ profileURL }}'))
+        .pipe(replace(/{{fathomID}}/g, '{{ fathomID }}'))
         .pipe(rename({extname: '.hbs'}))
         .pipe(dest(paths.html.dest));
     cb();
@@ -116,10 +107,10 @@ function generateHandlebars(cb) {
 
 function html(cb) {
     src(paths.html.src)
-        .pipe(replace(/==homeDomain==/g, buildvars.homeDomain))
-        .pipe(replace(/==signUpURL==/g, buildvars.signUpURL))
-        .pipe(replace(/==profileURL==/g, buildvars.profileURL))
-        .pipe(replace(/==fathomID==/g, buildvars.fathomID))
+        .pipe(replace(/{{homeDomain}}/g, buildvars.homeDomain))
+        .pipe(replace(/{{signUpURL}}/g, buildvars.signUpURL))
+        .pipe(replace(/{{profileURL}}/g, buildvars.profileURL))
+        .pipe(replace(/{{fathomID}}/g, buildvars.fathomID))
         .pipe(dest(paths.html.dest));
     cb();
 };
