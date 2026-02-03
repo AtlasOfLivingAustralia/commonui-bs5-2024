@@ -24,7 +24,7 @@ var paths = {
         dest: 'build/'
     },
     html: {
-        src: ['source/html/site-banner.mustache', 'source/html/site-footer.mustache', 'source/html/site-head.mustache'],
+        src: ['source/html/banner.mustache', 'source/html/footer.mustache', 'source/html/head.mustache'],
         dest: 'build/'
     },
     images: {
@@ -77,8 +77,8 @@ function otherCSSFiles(cb) {
 }
 
 function testHTMLPage() {
-    var header = fs.readFileSync('source/html/site-banner.mustache');
-    var footer = fs.readFileSync('source/html/site-footer.mustache');
+    var header = fs.readFileSync('source/html/banner.mustache');
+    var footer = fs.readFileSync('source/html/footer.mustache');
     return src(paths.testHtml.src)
         .pipe(replace('HEADER_HERE', header))
         .pipe(replace('FOOTER_HERE', footer))
