@@ -154,13 +154,13 @@ $icon-font-path: "../fonts/";
 @import url(https://fonts.googleapis.com/css?family=Lato%3A700%7CRoboto%3A300%2C400%2C400i%2C500%2C700%2C900&ver=5.2.1);
 
 @import "../vendor/bootstrap/scss/bootstrap.scss";
-@import "./old-theme/child_theme_variables";
-@import "./old-theme/child_theme";
+//@import "./old-theme/child_theme_variables";
+//@import "./old-theme/child_theme";
 
 #wrapper-navbar {
-  @import "./old-theme/partials/header";
+  //@import "./old-theme/partials/header";
 }
 
 footer {
-  @import "./old-theme/partials/footer";
+  //@import "./old-theme/partials/footer";
 }

@@ -4,3 +4,4 @@ buildvars-ignored/*
 build/*
 buildvars.js
 .DS_Store
+intermediate/*.css

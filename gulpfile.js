@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     replace = require('gulp-replace'),
     uglify = require('gulp-uglify'),
     babel = require('gulp-babel'),
+    concat = require('gulp-concat'),
     fs = require('fs'),
     gulpClean = require('gulp-clean'),
     buildvars = require('./buildvars.js');
@@ -13,8 +14,11 @@ const {src, dest, series, parallel} = gulp;
 
 var paths = {
     styles: {
+        src: ['source/vendor/jquery/jquery-ui-autocomplete.css', 'source/css/*.css', 'intermediate/*.css'],
         'boostrap-ala': 'source/scss/bootstrap-ala.scss',
         'ala-styles': 'source/scss/ala-styles.scss',
+        sourceSass: ['source/scss/bootstrap-ala.scss', 'source/scss/ala-styles.scss'],
+        compiledSass: 'intermediate/',
         dest: 'build/css/',
         jqueryui: 'source/vendor/jquery/jquery-ui-autocomplete.css',
         dependencycss: ['source/css/*.css']
@@ -32,6 +36,7 @@ var paths = {
         dest: 'build/img/'
     },
     js: {
+        combinedJSSources: ['source/vendor/jquery/jquery-3.7.1.js', 'source/vendor/jquery/jquery-ui-autocomplete.js', 'source/vendor/bootstrap/dist/js/bootstrap.bundle.js', 'source/js/application.js'],
         src: [
             'source/js/application.js'
         ],
@@ -42,6 +47,7 @@ var paths = {
     }
 };
 
+// DEPRECATED
 function bootstrapCSS(cb) {
     const bootstrapCSSSource = paths.styles["ala-styles"];
     const bootstrapCSSDest = paths.styles.dest;
@@ -57,6 +63,32 @@ function bootstrapCSS(cb) {
     cb();
 }
 
+function compileSASS(cb) {
+    const sassSource = paths.styles.sourceSass;
+    const sassDest = paths.styles.compiledSass;
+    //console.log('src: ' + sassSource);
+    //console.log('dest: ' + sassDest);
+    src(sassSource)
+        .pipe(gulpSass({precision: 9}).on('error', gulpSass.logError))
+        .pipe(rename(function (path) {
+            path.basename += "-compiled-do-not-edit";
+            path.extname = ".css";
+        }))
+        .pipe(dest(sassDest));
+    cb();
+}
+
+function combinedCSS(cb) {
+    src(paths.styles.src)
+        .pipe(concat('ala-combined.css', {newLine:'\n;'}))
+        .pipe(dest(paths.styles.dest))
+        .pipe(cleanCSS())
+        .pipe(rename('ala-combined.min.css'))
+        .pipe(dest(paths.styles.dest));
+    cb();
+}
+
+// DEPRECATED
 function autocompleteCSS(cb) {
     src(paths.styles.jqueryui)
         .pipe(rename('autocomplete.css'))
@@ -67,6 +99,7 @@ function autocompleteCSS(cb) {
     cb();
 }
 
+// DEPRECATED
 function otherCSSFiles(cb) {
     src(paths.styles.dependencycss)
         .pipe(dest(paths.styles.dest))
@@ -152,18 +185,35 @@ function otherJsFiles() {
         .pipe(dest(paths.js.dest));
 }
 
-var css = parallel(bootstrapCSS, autocompleteCSS, otherCSSFiles);
+function combinedJS(cb) {
+    src(paths.js.combinedJSSources)
+        .pipe(concat('ala-combined.js', {newLine:'\n;'}))
+        .pipe(dest(paths.js.dest))
+        .pipe(uglify({output: {comments: '/^!/'}}))
+        .pipe(rename('ala-combined.min.js'))
+        .pipe(dest(paths.js.dest));
+    cb();
+}
 
-var js = parallel(jQuery, bootstrapJS, autocompleteJS, otherJsFiles);
+var oldcss = parallel(bootstrapCSS, autocompleteCSS, otherCSSFiles);
 
-var build = parallel(css, testHTMLPage, html, generateHandlebars, js, images);
+var oldjs = parallel(jQuery, bootstrapJS, autocompleteJS, otherJsFiles);
+
+var css = series(compileSASS, combinedCSS);
+
+var build = parallel(css, testHTMLPage, html, generateHandlebars, combinedJS, images);
 
 exports.otherCSSFiles = otherCSSFiles;
   
 exports.default = build;
+exports.oldcss = oldcss;
 exports.css = css;
 exports.html = series([testHTMLPage, html]);
 exports.images = images;
 exports.hbs = generateHandlebars;
-exports.js = js;
+exports.oldjs = oldjs;
+exports.js = combinedJS;
+exports.compileSASS = compileSASS;
+exports.combinedCSS = combinedCSS;
+exports.combinedJS = combinedJS;
 exports.build = build;
