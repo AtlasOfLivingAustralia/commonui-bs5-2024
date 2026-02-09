@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     babel = require('gulp-babel'),
     concat = require('gulp-concat'),
+    merge = require('merge-stream'),
     fs = require('fs'),
     gulpClean = require('gulp-clean'),
     buildvars = require('./buildvars.js');
@@ -14,7 +15,7 @@ const {src, dest, series, parallel} = gulp;
 
 var paths = {
     styles: {
-        src: ['source/vendor/jquery/jquery-ui-autocomplete.css', 'source/css/*.css', 'intermediate/*.css'],
+        src: ['source/vendor/jquery/jquery-ui-autocomplete.css', 'source/css/*.css'],
         'boostrap-ala': 'source/scss/bootstrap-ala.scss',
         'ala-styles': 'source/scss/ala-styles.scss',
         sourceSass: ['source/scss/bootstrap-ala.scss', 'source/scss/ala-styles.scss'],
@@ -63,6 +64,7 @@ function bootstrapCSS(cb) {
     cb();
 }
 
+// DEPRECATED
 function compileSASS(cb) {
     const sassSource = paths.styles.sourceSass;
     const sassDest = paths.styles.compiledSass;
@@ -78,6 +80,7 @@ function compileSASS(cb) {
     cb();
 }
 
+// DEPRECATED
 function combinedCSS(cb) {
     src(paths.styles.src)
         .pipe(concat('ala-combined.css', {newLine:'\n;'}))
@@ -195,14 +198,37 @@ function combinedJS(cb) {
     cb();
 }
 
+function css(cb) {
+    var sassStream,
+        cssStream;
+
+    //compile sass
+    sassStream = gulp.src(paths.styles.sourceSass)
+        .pipe(gulpSass({precision: 9}).on('error', gulpSass.logError));
+
+    //select additional css files
+    cssStream = gulp.src(paths.styles.src);
+
+    //merge the two streams and concatenate their contents into a single file
+    merge(sassStream, cssStream)
+        .pipe(concat('ala-combined.css', {newLine:'\n;'}))
+        .pipe(dest(paths.styles.dest))
+        .pipe(cleanCSS())
+        .pipe(rename({extname: '.min.css'}))
+        .pipe(dest(paths.styles.dest));
+    cb();
+}
+
+// DEPRECATED
 var oldcss = parallel(bootstrapCSS, autocompleteCSS, otherCSSFiles);
 
 var oldjs = parallel(jQuery, bootstrapJS, autocompleteJS, otherJsFiles);
 
-var css = series(compileSASS, combinedCSS);
+// var css = series(compileSASS, combinedCSS);
 
 var build = parallel(css, testHTMLPage, html, generateHandlebars, combinedJS, images);
 
+// DEPRECATED
 exports.otherCSSFiles = otherCSSFiles;
   
 exports.default = build;
