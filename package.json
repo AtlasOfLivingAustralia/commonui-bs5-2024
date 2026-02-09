@@ -26,9 +26,9 @@
     "gulp-replace": "^1.1.4",
     "gulp-uglify": "^3.0.2",
     "gulp-babel": "^8.0.0",
-    "gulp-clean": "^0.4.0",
     "gulp-debug": "^5.0.1",
     "gulp-concat": "^2.6.1",
-    "merge-stream": "^2.0.0"
+    "stream-series": "^0.1.1",
+    "del": "6.1.1"
   }
 }
