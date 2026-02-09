@@ -795,6 +795,12 @@ h5 {
         }
     }
 }
+@include color-mode(dark) {
+    #breadcrumb {
+        background-color: $charcoal;
+        color: var(--bs-link-color-rgb);
+    }
+}
 
 .ala-page {
     margin-top: 2rem;
