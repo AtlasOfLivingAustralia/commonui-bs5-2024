@@ -168,7 +168,5 @@ exports.images = images;
 exports.hbs = generateHandlebars;
 exports.oldjs = oldjs;
 exports.js = combinedJS;
-exports.compileSASS = compileSASS;
-exports.combinedCSS = combinedCSS;
 exports.combinedJS = combinedJS;
 exports.build = build;
