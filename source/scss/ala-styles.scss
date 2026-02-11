@@ -202,6 +202,10 @@ h5 {
     // --bs-btn-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
 }
 
+.btn-outline-secondary {
+    --bs-btn-color: black;
+}
+
 // slightly wider left/right gutters
 .row > * {
     --bs-gutter-x: 1.75rem;
