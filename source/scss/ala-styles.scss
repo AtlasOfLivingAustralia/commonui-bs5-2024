@@ -313,19 +313,28 @@ h5 {
     --bs-gutter-x: 1.75rem;
 }
 
-.ala-link-arrow::after {
-    display: inline-block;
-    content: "";
-    vertical-align: -0.2em;
-    height: 1rem;
-    width: 1.5rem;
-    color: $charcoal;
-    /* Bootstrap Icons SVG: arrow-right */
-    background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8' clip-rule='evenodd'/></svg>");
-    background-repeat: no-repeat;
-    background-size: 1rem 1rem;
-    background-position: 0.5rem 0;
+.ala-link-arrow {
+    text-decoration: none;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+
+    &::after {
+        display: inline-block;
+        content: "";
+        vertical-align: -0.2em;
+        height: 1rem;
+        width: 1.5rem;
+        color: $charcoal;
+        /* Bootstrap Icons SVG: arrow-right */
+        background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8' clip-rule='evenodd'/></svg>");
+        background-repeat: no-repeat;
+        background-size: 1rem 1rem;
+        background-position: 0.5rem 0;
+    }
 }
+
 @include color-mode(dark) {
     .ala-link-arrow::after {
         background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8' clip-rule='evenodd'/></svg>");
@@ -662,10 +671,6 @@ body.background-lightgrey {
                     background-size: 1rem 1rem;
                     background-position: 0 0.2rem;
                     background-color: transparent;
-                }
-
-                &:focus {
-                    //
                 }
 
             }

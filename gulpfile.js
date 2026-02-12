@@ -17,7 +17,6 @@ var paths = {
     styles: {
         src: ['source/vendor/jquery/jquery-ui-autocomplete.css', 'source/css/*.css'],
         sourceSass: ['source/scss/ala-styles.scss'],
-        compiledSass: 'intermediate/',
         dest: 'build/css/'
     },
     testHtml: {
