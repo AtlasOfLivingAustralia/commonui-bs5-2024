@@ -16,13 +16,9 @@ const {src, dest, series, parallel} = gulp;
 var paths = {
     styles: {
         src: ['source/vendor/jquery/jquery-ui-autocomplete.css', 'source/css/*.css'],
-        'boostrap-ala': 'source/scss/bootstrap-ala.scss',
-        'ala-styles': 'source/scss/ala-styles.scss',
-        sourceSass: ['source/scss/bootstrap-ala.scss', 'source/scss/ala-styles.scss'],
+        sourceSass: ['source/scss/ala-styles.scss'],
         compiledSass: 'intermediate/',
-        dest: 'build/css/',
-        jqueryui: 'source/vendor/jquery/jquery-ui-autocomplete.css',
-        dependencycss: ['source/css/*.css']
+        dest: 'build/css/'
     },
     testHtml: {
         src: ['source/html/testPage.html', 'source/html/testHome.html', 'source/html/patternLibrary*.html'],

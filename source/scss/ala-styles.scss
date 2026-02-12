@@ -3,12 +3,7 @@
 // Roboto font
 @import url(https://fonts.googleapis.com/css?family=Lato%3A700%7CRoboto%3A300%2C400%2C400i%2C500%2C700%2C900&ver=5.2.1);
 
-// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "../vendor/bootstrap/scss/functions";
-
-// 2. Include any default variable overrides here
-
-
+// === overrides of Bootstrap default variables ===
 
 // ALA colour palette
 $flamingo: #f26649;
@@ -44,6 +39,161 @@ $danger:        $flamingo;
 $light:         $concrete;
 $dark:          $charcoal;
 
+
+$gray-base:              #000;
+$gray-darker:            #212121;
+$gray-dark:              #343a40;
+$gray:                   #6c757d;
+$gray-light:             #ced4da;
+$gray-lighter:           #f2f2f2;
+
+$brand-primary:         $flamingo;
+$brand-primary-dark:    $primary;
+$brand-success:         $success;
+$brand-info:            $info;
+$brand-warning:         $warning;
+$brand-danger:          $danger;
+$brand-default:         white;
+
+// from bootstrap-ala
+// $primary:               $brand-primary;
+// $secondary:             $brand-primary-dark;
+// $success:               $brand-success;
+// $info:                  $brand-info;
+// $warning:               $brand-warning;
+// $danger:                $brand-danger;
+// $light:                 $gray-light;
+// $dark:                  $gray-dark;
+
+
+
+// //** Background color for `<body>`.
+// $body-bg:               #fff !default;
+// //** Global text color on `<body>`.
+// $text-color:            $gray-darker !default;
+
+// //** Global textual link color.
+// $link-color:            #c44d34 !default;
+// //** Link hover color set via `darken()` function.
+// $link-hover-color:      darken($link-color, 15%) !default;
+// //** Link hover decoration.
+// $link-hover-decoration: underline !default;
+
+
+// //== Typography
+// //
+// //## Font, line-height, and color for body text, headings, and more.
+
+// $font-family-sans-serif:  'Roboto', sans-serif;
+// //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+// $font-family-monospace:   SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+
+// //== Buttons
+// //
+// //## For each of Bootstrap's buttons, define text, background and border color.
+// $btn-default-color:              #000 !default;
+// $btn-default-bg:                 $brand-default !default;
+// $btn-default-border:             #999 !default;
+
+// $btn-primary-color:              #fff !default;
+// $btn-primary-bg:                 $brand-primary-dark !default;
+// $btn-primary-border:             $brand-primary-dark !default;
+
+// $btn-success-color:              #fff !default;
+// $btn-success-bg:                 $brand-success !default;
+// $btn-success-border:             $brand-success !default;
+
+// $btn-info-color:                 #fff !default;
+// $btn-info-bg:                    $brand-info !default;
+// $btn-info-border:                $btn-info-bg !default;
+
+// $btn-warning-color:              #fff !default;
+// $btn-warning-bg:                 $brand-warning !default;
+// $btn-warning-border:             $btn-warning-bg !default;
+
+// $btn-danger-color:               #fff !default;
+// $btn-danger-bg:                  $brand-danger !default;
+// $btn-danger-border:              $btn-danger-bg !default;
+
+// $btn-link-disabled-color:        $gray-light !default;
+
+
+// //== Forms
+// //
+// //##
+
+// //** `<input>` background color
+// $input-bg:                       #fff !default;
+// //** `<input disabled>` background color
+// $input-bg-disabled:              $gray-lighter !default;
+
+// //** Text color for `<input>`s
+// $input-color:                    $gray-darker !default;
+// //** `<input>` border color
+// $input-border:                   #999 !default;
+
+// //** Border color for inputs on focus
+// $input-border-focus:             lighten($brand-primary, 25%) !default;
+
+// //** Placeholder text color
+// $input-color-placeholder:        $gray-light !default;
+
+
+// //== Dropdowns
+// //
+// //## Dropdown menu container and contents.
+// $dropdown-font-size: 14px;
+
+// //** Divider color for between dropdown items.
+// $dropdown-divider-bg:            $gray-light !default;
+
+// //** Dropdown link text color.
+// $dropdown-link-color:            $gray-dark !default;
+// //** Hover background for dropdown links.
+// $dropdown-link-hover-bg:         $gray-lighter !default;
+
+// $grid-float-breakpoint: 992px !default;
+
+// //** Border color for table and cell borders.
+// $table-border-color:            #999 !default;
+
+// // Navbar
+// $navbar-light-color:            #999;
+
+// // Navbar toggle
+// $navbar-default-toggle-hover-bg:           #999 !default;
+// $navbar-default-toggle-border-color:       #999 !default;
+
+// //== Tabs
+// $nav-tabs-border-color:                     #999 !default;
+// $nav-tabs-active-link-hover-border-color:   #999 !default;
+// $nav-tabs-justified-link-border-color:            #999 !default;
+
+
+// //== Pagination
+// $pagination-border:                    #999 !default;
+// $pagination-hover-border:              #999 !default;
+// $pagination-disabled-border:           #999 !default;
+
+// //== List group
+// //** `.list-group-item` border color
+// $list-group-border:             #999 !default;
+
+// //== Panels
+// $panel-inner-border:          #999 !default;
+// $panel-default-border:        #999 !default;
+// $thumbnail-border:            #999 !default;
+
+
+
+
+
+
+
+
+
+
 $font-family-sans-serif: Roboto, sans-serif;
 
 $body-color: $charcoal;
@@ -54,59 +204,11 @@ $font-size-base: 0.875rem;  // 14px :(
 $link-color: $ocean;
 $link-color-dark: $glacial;
 
-// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
-@import "../vendor/bootstrap/scss/variables";
-@import "../vendor/bootstrap/scss/variables-dark";
+// === import Bootstrap ===
 
-// 4. Include any default map overrides here
+@import "../vendor/bootstrap/scss/bootstrap.scss";
 
-
-
-// 5. Include remainder of required parts
-@import "../vendor/bootstrap/scss/maps";
-@import "../vendor/bootstrap/scss/mixins";
-@import "../vendor/bootstrap/scss/root";
-
-// 6. Optionally include any other parts as needed
-@import "../vendor/bootstrap/scss/utilities";
-@import "../vendor/bootstrap/scss/reboot";
-@import "../vendor/bootstrap/scss/type";
-@import "../vendor/bootstrap/scss/images";
-@import "../vendor/bootstrap/scss/containers";
-@import "../vendor/bootstrap/scss/grid";
-@import "../vendor/bootstrap/scss/helpers";
-
-@import "../vendor/bootstrap/scss/tables";
-@import "../vendor/bootstrap/scss/forms";
-@import "../vendor/bootstrap/scss/buttons";
-@import "../vendor/bootstrap/scss/transitions";
-@import "../vendor/bootstrap/scss/dropdown";
-@import "../vendor/bootstrap/scss/button-group";
-@import "../vendor/bootstrap/scss/nav";
-@import "../vendor/bootstrap/scss/navbar";
-@import "../vendor/bootstrap/scss/card";
-@import "../vendor/bootstrap/scss/accordion";
-@import "../vendor/bootstrap/scss/breadcrumb";
-@import "../vendor/bootstrap/scss/pagination";
-@import "../vendor/bootstrap/scss/badge";
-@import "../vendor/bootstrap/scss/alert";
-@import "../vendor/bootstrap/scss/progress";
-@import "../vendor/bootstrap/scss/list-group";
-@import "../vendor/bootstrap/scss/close";
-@import "../vendor/bootstrap/scss/toasts";
-@import "../vendor/bootstrap/scss/modal";
-@import "../vendor/bootstrap/scss/tooltip";
-@import "../vendor/bootstrap/scss/popover";
-@import "../vendor/bootstrap/scss/carousel";
-@import "../vendor/bootstrap/scss/spinners";
-@import "../vendor/bootstrap/scss/offcanvas";
-@import "../vendor/bootstrap/scss/placeholders";
-
-// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
-@import "../vendor/bootstrap/scss/utilities/api";
-
-// 8. Add additional custom code here
-
+// === ALA style rules ===
 
 h1 {
     font-size: 2.125rem; //34px
@@ -230,6 +332,23 @@ h5 {
     }
 }
 
+/* Body
+================================= */
+body.background-white {
+    background-color:#fff;
+}
+body.background-lightgrey {
+    background-color:#f2f2f2;
+}
+
+/* Columns
+================================= */
+.no-gutter>[class*='col-']{
+    padding-right:0;padding-left:0;
+}
+.col-centered{
+    float:none;margin:0 auto;
+}
 
 .ala-header-wrapper {
     padding-top: 0.75rem;
@@ -782,6 +901,8 @@ h5 {
     }
 }
 
+/* Breadcrumb
+================================= */
 #breadcrumb {
     padding: 0.5rem 0;
     background-color: $concrete;
@@ -789,9 +910,11 @@ h5 {
     .breadcrumb-list {
         margin-bottom: 0;
         padding-left: 0;
+        list-style: none;
 
         li {
             display: inline-block;
+            line-height: normal;
 
             a {
                 text-decoration: none;
@@ -804,8 +927,8 @@ h5 {
             vertical-align: -.125em;
             height: 1rem;
             width: 2rem;
-            /* Bootstrap Icons SVG: chevron-left */
-            background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23999' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0' clip-rule='evenodd'/></svg>");
+            /* Bootstrap Icons SVG: chevron-right */
+            background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23999' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708' clip-rule='evenodd'/></svg>");
             background-repeat: no-repeat;
             background-size: 1rem 1rem;
             background-position: 0.5rem 0;
@@ -817,6 +940,11 @@ h5 {
         background-color: $charcoal;
         color: var(--bs-link-color-rgb);
     }
+}
+
+#main {
+    padding-top: 30px;
+    padding-bottom: 5em;
 }
 
 .ala-page {
@@ -906,7 +1034,6 @@ h5 {
     }
 }
 
-
 .ala-callout-alert-large {
     background-color: $honey;
     color: $charcoal;
@@ -923,6 +1050,16 @@ h5 {
     p {
         margin: 0;
     }
+}
+
+/* table of contents floating div */
+.toc-floating-menu.affix {
+    position: static;
+}
+
+.sidebar-col {
+    margin-bottom: 20px;
+    position:relative !important;
 }
 
 .footer-top {
