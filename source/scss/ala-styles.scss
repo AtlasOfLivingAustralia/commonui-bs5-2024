@@ -203,6 +203,8 @@ $font-size-base: 0.875rem;  // 14px :(
 
 $link-color: $ocean;
 $link-color-dark: $glacial;
+$link-hover-color: $grey;
+$link-hover-color-dark: white;
 
 // === import Bootstrap ===
 
@@ -1319,10 +1321,6 @@ body.background-lightgrey {
             }
         }
 
-        a {
-            color: $charcoal;
-        }
-
         .ala-hero-search {
             border: 1px solid $charcoal;
             border-radius: 5px;
@@ -1562,8 +1560,6 @@ body.background-lightgrey {
         }
 
         .impact-see-more {
-            text-decoration: none;
-            color: $charcoal;
             font-weight: 500;
             display: block;
             margin-bottom: 1.7rem;
@@ -1585,7 +1581,6 @@ body.background-lightgrey {
         }
 
         a {
-            color: $charcoal;
             text-decoration: none;
         }
 
@@ -1594,18 +1589,24 @@ body.background-lightgrey {
             margin-bottom: 2.3rem;
 
             .carousel-inner {
-                padding: 1rem;
+                padding: 0 2.5rem;
             }
 
             .carousel-control-prev, .carousel-control-next {
                 top: 5rem;
                 bottom: auto;
                 background-color: $charcoal;
-                width: 6vh;
-                height: 6vh;
+                width: 1.5rem;
+                height: 1.5rem;
                 border-radius: 50%;
                 top: 50%;
                 transform: translateY(-50%);
+            }
+            .carousel-control-prev {
+                left: calc(var(--bs-gutter-x) * 0.5);
+            }
+            .carousel-control-next {
+                right: calc(var(--bs-gutter-x) * 0.5);
             }
         }
 
@@ -1615,13 +1616,14 @@ body.background-lightgrey {
             font-size: 0.8rem;
             //display: inline-block;
             background-color: $concrete;
+            padding-right: 2.5rem;
 
             .ala-news-post-image {
                 overflow: hidden;
                 position: relative;
                 border-radius: 10px;
-                width: 16rem;
-                height: 11rem;
+                width: 13rem;
+                height: 9rem;
 
                 img {
                     position: absolute;
@@ -1669,6 +1671,7 @@ body.background-lightgrey {
             h3 {
                 font-size: 1.0rem;
                 text-decoration: underline;
+                line-height: 1.5rem;
             }
 
             .ala-news-post-date {
@@ -1695,9 +1698,13 @@ body.background-lightgrey {
             font-size: 1.2rem;
             margin-bottom: 1.1rem;
         }
-        a {
+        .btn-outline-primary {
             background-color: white;
             margin-bottom: 2rem;
+            &:hover {
+                background-color: $rust;
+                color: white;
+            }
         }
     }
 }
@@ -1832,6 +1839,10 @@ body.background-lightgrey {
 
             a {
                 color: white;
+            }
+
+            .carousel-control-prev-icon, .carousel-control-next-icon {
+                filter: invert(0) grayscale(100);
             }
 
             .ala-news-post {

@@ -14,7 +14,7 @@ jQuery( document ).ready(function() {
         // ALA home page - news block - carousel
         var alaHomeMultipleCardCarousel = $("#newsCarousel");
         let alaHomeCarouselWidth = $(".carousel-inner")[0].scrollWidth;
-        let alaHomeCarouselCardWidth = $(".carousel-item").width();
+        let alaHomeCarouselCardWidth = $(".carousel-item").width() + parseFloat($(".carousel-item").css("padding-left")) + parseFloat($(".carousel-item").css("padding-right")) ;
         let alaHomeCarouselScrollPosition = 0;
         let alaHomeCarouselCardsTotal = 9;
         let alaHomeCarouselCardsVisible = 3;
