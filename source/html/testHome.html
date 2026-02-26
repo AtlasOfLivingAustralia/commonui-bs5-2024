@@ -24,53 +24,66 @@ HEADER_HERE
 <div class="ala-hero-block">
 	<div class="container" id="content">
 		<div class="row">
-			<div class="col ala-hero">
+			<div id="heroCarousel" class="col ala-hero carousel slide">
 
-                <h1>Explore Australia&apos;s<br /><em>biodiversity</em></h1>
-
-                <div class="ala-hero-search">
-                    <form method="get" action="https://bie.ala.org.au/search">
-                        <div class="ala-hero-main-input">
-                            <label for="search" class="visually-hidden">Search species, data sets, content, and more</label>
-                            <!-- <div class="easy-autocomplete"> -->
-                                <input type="search" name="q" class="ala-hero-main-input-text form-control flex-grow-1 autocompleteHome" id="search" placeholder="Search species, data sets, content, and more..." autocomplete="off" />
-                                <!-- <div class="easy-autocomplete-container" id="eac-container-search">
-                                    <ul style="display: none;"></ul>
-                                </div> -->
-                            <!-- </div> -->
-                            <label for="searchSubmit" class="visually-hidden">Search</label>
-                            <button type="submit" id="searchSubmit" class="ala-hero-submit">
-                                <svg fill="currentColor">
-                                    <use href="#magnifying-glass"></use>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="ala-hero-type-input" data-expanded="false">
-                            <button type="button" class="ala-hero-type-dropdown-button" aria-label="Search type options" aria-expanded="false"
-                                aria-controls="ala-hero-type-dropdown-panel">
-                                Search type
-                                <span></span>
-                            </button>
-                            <div class="ala-hero-type-dropdown-panel" aria-hidden="true" id="ala-hero-type-dropdown-panel">
-                                <label for="searchType" class="visually-hidden">
-                                    <span>Search type</span>
-                                </label>
-                                <select id="searchType" multiple name="searchType" size="9">
-                                    <option class="search-type-option search-type-all" value="all">All</option>
-                                    <option class="search-type-option search-type-species" value="species">Species</option>
-                                    <option class="search-type-option search-type-datasets" value="datasets">Data sets</option>
-                                    <option class="search-type-option search-type-lists" value="lists">Species lists</option>
-                                    <option class="search-type-option search-type-projects" value="projects">Data projects</option>
-                                    <option class="search-type-option search-type-layers" value="layers">Environmental layers</option>
-                                    <option class="search-type-option search-type-regions" value="regions">Regions/localities</option>
-                                    <option class="search-type-option search-type-content" value="content">ALA general content</option>
-                                    <option class="search-type-option search-type-help" value="help">Help articles</option>
-                                </select>
-                            </div>
-                        </div>
-                    </form>
+                <div class="carousel-inner">
+                    <div class="ala-hero-image carousel-item active">
+                        <img src="img/home-hero-atlas-moth.jpeg" alt="" />
+                    </div>
+                    <div class="ala-hero-image carousel-item">
+                        <img src="img/home-hero-bare-nosed-wombat.jpg" alt="" />
+                    </div>
+                    <div class="ala-hero-image carousel-item">
+                        <img src="img/home-hero-ghost-fungus.jpg" alt="" />
+                    </div>
                 </div>
-                <div class="ala-hero-advanced"><a href="#">Advanced search</a></div>
+                <div class="ala-hero-overlay">
+                    <h1>Explore Australia&apos;s<br /><em>biodiversity</em></h1>
+
+                    <div class="ala-hero-search">
+                        <form method="get" action="https://bie.ala.org.au/search">
+                            <div class="ala-hero-main-input">
+                                <label for="search" class="visually-hidden">Search species, data sets, content, and more</label>
+                                <!-- <div class="easy-autocomplete"> -->
+                                    <input type="search" name="q" class="ala-hero-main-input-text form-control flex-grow-1 autocompleteHome" id="search" placeholder="Search species, data sets, content, and more..." autocomplete="off" />
+                                    <!-- <div class="easy-autocomplete-container" id="eac-container-search">
+                                        <ul style="display: none;"></ul>
+                                    </div> -->
+                                <!-- </div> -->
+                                <label for="searchSubmit" class="visually-hidden">Search</label>
+                                <button type="submit" id="searchSubmit" class="ala-hero-submit">
+                                    <svg fill="currentColor">
+                                        <use href="#magnifying-glass"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="ala-hero-type-input" data-expanded="false">
+                                <button type="button" class="ala-hero-type-dropdown-button" aria-label="Search type options" aria-expanded="false"
+                                    aria-controls="ala-hero-type-dropdown-panel">
+                                    Search type
+                                    <span></span>
+                                </button>
+                                <div class="ala-hero-type-dropdown-panel" aria-hidden="true" id="ala-hero-type-dropdown-panel">
+                                    <label for="searchType" class="visually-hidden">
+                                        <span>Search type</span>
+                                    </label>
+                                    <select id="searchType" multiple name="searchType" size="9">
+                                        <option class="search-type-option search-type-all" value="all">All</option>
+                                        <option class="search-type-option search-type-species" value="species">Species</option>
+                                        <option class="search-type-option search-type-datasets" value="datasets">Data sets</option>
+                                        <option class="search-type-option search-type-lists" value="lists">Species lists</option>
+                                        <option class="search-type-option search-type-projects" value="projects">Data projects</option>
+                                        <option class="search-type-option search-type-layers" value="layers">Environmental layers</option>
+                                        <option class="search-type-option search-type-regions" value="regions">Regions/localities</option>
+                                        <option class="search-type-option search-type-content" value="content">ALA general content</option>
+                                        <option class="search-type-option search-type-help" value="help">Help articles</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="ala-hero-advanced"><a href="#">Advanced search</a></div>
+                </div>
 
 			</div><!-- .ala-hero -->
 		</div><!-- .row -->

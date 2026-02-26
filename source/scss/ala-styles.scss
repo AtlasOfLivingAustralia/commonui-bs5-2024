@@ -1308,9 +1308,15 @@ body.background-lightgrey {
         min-height: 30rem;
         background-color: $concrete;
 
+        .ala-hero-overlay {
+            position: absolute;
+            top: 0;
+        }
+
         h1 {
             margin-top: 195px;
             margin-bottom: 2.2rem;
+            width: 20rem;
 
             em {
                 display: inline-block;
@@ -1762,6 +1768,10 @@ body.background-lightgrey {
             background-color: black;
             color: white;
 
+            .ala-hero-overlay {
+                background-color: black;
+            }
+
             .ala-hero-search {
                 background-color: $charcoal;
                 border-color: $grey;
@@ -1936,6 +1946,33 @@ body.background-lightgrey {
     .home {
         .ala-hero-block {
 
+            .ala-hero {
+
+                .ala-hero-overlay {
+                    height:546px;
+                    background-image: url(../img/ala-home-hero-overlay-bg.svg);
+                    background-repeat: no-repeat;
+                    background-position: top 0 left 260px;
+
+                    h1 {
+                        margin-top: 3.6rem;
+                        font-weight: 400;
+                        font-size: 3rem;
+
+                        em {
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+                .ala-hero-image {
+                    height: 545px; 
+
+                    img {
+                        float: right;
+                    }
+                }
+            }
             .ala-hero-search {
                 width: 48rem;
 
