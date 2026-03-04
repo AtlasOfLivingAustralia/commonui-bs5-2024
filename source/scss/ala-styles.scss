@@ -206,6 +206,8 @@ $link-color-dark: $glacial;
 $link-hover-color: $grey;
 $link-hover-color-dark: white;
 
+$carousel-transition-duration: 1.5s;
+
 // === import Bootstrap ===
 
 @import "../vendor/bootstrap/scss/bootstrap.scss";
@@ -1308,6 +1310,11 @@ body.background-lightgrey {
         min-height: 30rem;
         background-color: $concrete;
 
+        .ala-hero-image {
+            animation-duration: 6s;
+            animation-name: hero-tilt;
+        }
+
         .ala-hero-overlay {
             position: absolute;
             top: 0;
@@ -1715,6 +1722,16 @@ body.background-lightgrey {
     }
 }
 
+@keyframes hero-tilt {
+  from {
+    object-view-box: 0px 0px 800px 546px;
+  }
+
+  to {
+    object-view-box: 0px 200px 800px 546px;
+  }
+}
+
 .search-type-option::before {
     display: inline-block;
     content: "";
@@ -1949,13 +1966,16 @@ body.background-lightgrey {
             .ala-hero {
 
                 .ala-hero-overlay {
-                    height:546px;
-                    background-image: url(../img/ala-home-hero-overlay-bg.svg);
-                    background-repeat: no-repeat;
-                    background-position: top 0 left 260px;
+                    height: 546px;
+                    background-image: url(../img/ala-home-hero-overlay-bg.svg), linear-gradient($concrete, $concrete);
+                    background-repeat: no-repeat, no-repeat;
+                    background-position: top 0 left 260px, top left;
+                    background-size: auto, 260px 100%;
+                    z-index: 10;
 
                     h1 {
-                        margin-top: 3.6rem;
+                        margin-top: 2.7rem;
+                        margin-bottom: 11.9rem;
                         font-weight: 400;
                         font-size: 3rem;
 
@@ -1966,7 +1986,7 @@ body.background-lightgrey {
                 }
 
                 .ala-hero-image {
-                    height: 545px; 
+                    height: 545px;
 
                     img {
                         float: right;
