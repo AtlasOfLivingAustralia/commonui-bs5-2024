@@ -1785,10 +1785,6 @@ body.background-lightgrey {
             background-color: black;
             color: white;
 
-            .ala-hero-overlay {
-                background-color: black;
-            }
-
             .ala-hero-search {
                 background-color: $charcoal;
                 border-color: $grey;
@@ -2166,6 +2162,17 @@ body.background-lightgrey {
             a {
                 margin-top: 2.6rem;
                 float: right;
+            }
+        }
+    }
+    @include color-mode(dark) {
+        .home {
+            .ala-hero-block {
+                .ala-hero {
+                    .ala-hero-overlay {
+                        background-image: url(../img/ala-home-hero-overlay-bg-dark.svg), linear-gradient(black, black);
+                    }
+                }
             }
         }
     }
