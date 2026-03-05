@@ -1782,7 +1782,7 @@ body.background-lightgrey {
 @include color-mode(dark) {
     .home {
         .ala-hero-block {
-            background-color: black;
+            background-color: $charcoal;
             color: white;
 
             .ala-hero-search {
@@ -1828,6 +1828,8 @@ body.background-lightgrey {
             }
         }
         .ala-quicklinks-block {
+            background-color: black;
+            
             ul {
                 li {
                     border: 1px solid $silver;
@@ -2170,7 +2172,7 @@ body.background-lightgrey {
             .ala-hero-block {
                 .ala-hero {
                     .ala-hero-overlay {
-                        background-image: url(../img/ala-home-hero-overlay-bg-dark.svg), linear-gradient(black, black);
+                        background-image: url(../img/ala-home-hero-overlay-bg-dark.svg), linear-gradient($charcoal, $charcoal);
                     }
                 }
             }
