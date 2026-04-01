@@ -1307,17 +1307,29 @@ body.background-lightgrey {
 
 .home {
     .ala-hero-block {
-        min-height: 30rem;
         background-color: $concrete;
+        min-height: 460px;
 
         .ala-hero-image {
             animation-duration: 6s;
             animation-name: hero-tilt;
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 25rem;
+            }
         }
 
         .ala-hero-overlay {
             position: absolute;
             top: 0;
+
+            width: calc(100% - 1.5rem);
+            background-image: url(../img/ala-home-hero-overlay-bg-small.svg), linear-gradient($concrete, $concrete);
+            background-repeat: no-repeat, no-repeat;
+            background-position: bottom 150px left 0, bottom left;
+            background-size: 100% 250px, 100% 250px;
+            z-index: 10;
         }
 
         h1 {
@@ -1829,7 +1841,7 @@ body.background-lightgrey {
         }
         .ala-quicklinks-block {
             background-color: black;
-            
+
             ul {
                 li {
                     border: 1px solid $silver;
@@ -1961,10 +1973,15 @@ body.background-lightgrey {
     .home {
         .ala-hero-block {
 
+            min-height: 30rem;
+
             .ala-hero {
 
                 .ala-hero-overlay {
+                    top: 0;
                     height: 546px;
+                    max-width: none;
+                    width: auto;
                     background-image: url(../img/ala-home-hero-overlay-bg.svg), linear-gradient($concrete, $concrete);
                     background-repeat: no-repeat, no-repeat;
                     background-position: top 0 left 260px, top left;
@@ -1988,6 +2005,8 @@ body.background-lightgrey {
 
                     img {
                         float: right;
+                        width: auto;
+                        height: auto;
                     }
                 }
             }

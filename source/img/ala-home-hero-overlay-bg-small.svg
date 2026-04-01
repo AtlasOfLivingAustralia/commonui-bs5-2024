@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="100%"
+   height="135"
+   viewBox="0 0 992 135"
+   fill="none"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="ala-home-hero-overlay-bg-small.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.88104839"
+     inkscape:cx="496"
+     inkscape:cy="67.533181"
+     inkscape:window-width="2025"
+     inkscape:window-height="1178"
+     inkscape:window-x="3012"
+     inkscape:window-y="45"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg5" />
+  <g
+     clip-path="url(#clip0_416_2998)"
+     id="g1"
+     style="display:inline"
+     transform="matrix(2.7555556,0,0,1,0,61.99958)">
+    <path
+       d="m 0,17.2253 15,5.8171 c 15,5.73 45,17.495 75,22.0703 30,4.5752 60,2.3965 90,-3.486 30,-5.8825 60,-15.033 90,-20.9155 30,-5.88251 60,-8.06121 75,-9.30307 l 15,-1.15471 V 73.0001 h -15 c -15,0 -45,0 -75,0 -30,0 -60,0 -90,0 -30,0 -60,0 -90,0 -30,0 -60,0 -75,0 H 0 Z"
+       fill="#f2f2f2"
+       id="path1"
+       style="display:inline" />
+  </g>
+  <g
+     clip-path="url(#clip0_301_3827)"
+     id="g2"
+     style="display:inline"
+     transform="matrix(2.7555556,0,0,1,0,37.93535)">
+    <path
+       d="m 0,17.4388 15,8.298 c 15,8.1736 45,24.956 75,31.4825 30,6.5265 60,3.4187 90,-4.9725 30,-8.3912 60,-21.4442 90,-29.8354 30,-8.3913 60,-11.4991 75,-13.27058 L 360,7.49365 V 96.9999 h -15 c -15,0 -45,0 -75,0 -30,0 -60,0 -90,0 -30,0 -60,0 -90,0 -30,0 -60,0 -75,0 H 0 Z"
+       fill="#f2f2f2"
+       fill-opacity="0.65"
+       id="path2"
+       style="display:inline" />
+  </g>
+  <g
+     clip-path="url(#clip0_416_4913)"
+     id="g3"
+     transform="scale(2.7555556,1)">
+    <path
+       d="m 0,24.2706 15,11.5487 c 15,11.3758 45,34.7327 75,43.816 30,9.0833 60,4.7579 90,-6.9206 30,-11.6785 60,-29.845 90,-41.5235 30,-11.6785 60,-16.0039 75,-18.4693 l 15,-2.2925 V 135 h -15 c -15,0 -45,0 -75,0 -30,0 -60,0 -90,0 -30,0 -60,0 -90,0 -30,0 -60,0 -75,0 H 0 Z"
+       fill="#f2f2f2"
+       fill-opacity="0.45"
+       id="path3" />
+  </g>
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip0_416_4913">
+      <rect
+         width="100%"
+         height="135"
+         fill="white"
+         id="rect3" />
+    </clipPath>
+    <clipPath
+       id="clip0_301_3827">
+      <rect
+         width="100%"
+         height="97"
+         fill="white"
+         id="rect4" />
+    </clipPath>
+    <clipPath
+       id="clip0_416_2998">
+      <rect
+         width="100%"
+         height="68"
+         fill="white"
+         id="rect5" />
+    </clipPath>
+  </defs>
+</svg>
