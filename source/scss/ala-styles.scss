@@ -1305,7 +1305,7 @@ body.background-lightgrey {
 
 // Home page styles
 
-.home {
+.ALAhome {
     .ala-hero-block {
         background-color: $concrete;
         min-height: 460px;
@@ -1792,7 +1792,7 @@ body.background-lightgrey {
 }
 
 @include color-mode(dark) {
-    .home {
+    .ALAhome {
         .ala-hero-block {
             background-color: $charcoal;
             color: white;
@@ -1970,7 +1970,7 @@ body.background-lightgrey {
     }
 }
 @include media-breakpoint-up(lg) {
-    .home {
+    .ALAhome {
         .ala-hero-block {
 
             min-height: 30rem;
@@ -2187,7 +2187,7 @@ body.background-lightgrey {
         }
     }
     @include color-mode(dark) {
-        .home {
+        .ALAhome {
             .ala-hero-block {
                 .ala-hero {
                     .ala-hero-overlay {
@@ -2199,7 +2199,7 @@ body.background-lightgrey {
     }
 }
 @include media-breakpoint-up(xl) {
-    .home {
+    .ALAhome {
         .ala-quicklinks-block {
             ul {
                 li {

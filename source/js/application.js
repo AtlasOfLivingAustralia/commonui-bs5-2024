@@ -8,87 +8,92 @@ jQuery( document ).ready(function() {
 
     let alaHeaderExpandedItem = null;
 
-    const alaHomePage = document.getElementsByClassName("home");
+    const alaHomePage = document.getElementsByClassName("ALAhome");
+    const alaHomeNewsCarousel = document.getElementById("ALAnewsCarousel");
+    const alaHomeSearchType = document.getElementsByClassName("ala-hero-type-input");
     // length > 0 if this is the home page
     if (alaHomePage.length > 0) {
-        // ALA home page - news block - carousel
-        var alaHomeMultipleCardCarousel = $("#newsCarousel");
-        let alaHomeCarouselWidth = $(".carousel-inner")[0].scrollWidth;
-        let alaHomeCarouselCardWidth = $(".carousel-item").width() + parseFloat($(".carousel-item").css("padding-left")) + parseFloat($(".carousel-item").css("padding-right")) ;
-        let alaHomeCarouselScrollPosition = 0;
-        let alaHomeCarouselCardsTotal = 9;
-        let alaHomeCarouselCardsVisible = 3;
-        if (window.matchMedia("(min-width: 768px)").matches) {
-            var alaHomeCarousel = new bootstrap.Carousel(alaHomeMultipleCardCarousel, {
-                interval: false,
-                wrap: false
-            });
-            $(".home .carousel-control-next").on("click", function () {
-                // next button in home page news carousel
-                if (alaHomeCarouselScrollPosition < (alaHomeCarouselWidth - alaHomeCarouselCardWidth * (alaHomeCarouselCardsTotal - alaHomeCarouselCardsVisible))) { //check if you can go any further
-                    alaHomeCarouselScrollPosition += alaHomeCarouselCardWidth * alaHomeCarouselCardsVisible;  //update scroll position
-                $(".carousel-inner").animate({ scrollLeft: alaHomeCarouselScrollPosition },600); //scroll left
-                }
-            });
-        
-            $(".home .carousel-control-prev").on("click", function () {
-                // prev button in home page news carousel
-                if (alaHomeCarouselScrollPosition > 0) {
-                    alaHomeCarouselScrollPosition -= alaHomeCarouselCardWidth * alaHomeCarouselCardsVisible;
-                $(".carousel-inner").animate(
-                    { scrollLeft: alaHomeCarouselScrollPosition },
-                    600
-                );
-                }
-            });
-        } else {
-            $(alaHomeMultipleCardCarousel).addClass("slide");
-        }
-
-        // ALA home page - hero block - search input
-        const homeSearchType = document.querySelector(".ala-hero-type-input");
-        const homeSearchTypeButton = homeSearchType.querySelector("button");
-    
-        const expandHomeSearchType = () => {
-            const subMenu = homeSearchType.querySelector("div");
-            const button = homeSearchType.querySelector("button");
-    
-            subMenu.setAttribute("aria-hidden","false");
-            button.setAttribute("aria-expanded","true");
-            homeSearchType.dataset.expanded = "true";
-            //subMenu.querySelectorAll("a")[0].focus(); // Focus on the first link in the submenu
-            button.focus(); // Focus on the button
-        };
-    
-        const collapseHomeSearchType = () => {
-            const subMenu = homeSearchType.querySelector("div");
-            const button = homeSearchType.querySelector("button");
-    
-            subMenu.setAttribute("aria-hidden","true");
-            button.setAttribute("aria-expanded","false");
-            homeSearchType.dataset.expanded = "false";
-            button.focus(); // Focus back on the button
-        };
-    
-    
-        homeSearchTypeButton.addEventListener("click", (event) => {
-            event.preventDefault(); // Prevent the default action to stop scrolling when pressing Space
-            if (homeSearchTypeButton.ariaExpanded === "false") {
-                expandHomeSearchType(homeSearchTypeButton);
+        if (alaHomeNewsCarousel) {
+            // ALA home page - news block - carousel
+            var alaHomeMultipleCardCarousel = $("#ALAnewsCarousel");
+            let alaHomeCarouselWidth = $(".carousel-inner")[0].scrollWidth;
+            let alaHomeCarouselCardWidth = $(".carousel-item").width() + parseFloat($(".carousel-item").css("padding-left")) + parseFloat($(".carousel-item").css("padding-right")) ;
+            let alaHomeCarouselScrollPosition = 0;
+            let alaHomeCarouselCardsTotal = 9;
+            let alaHomeCarouselCardsVisible = 3;
+            if (window.matchMedia("(min-width: 768px)").matches) {
+                var alaHomeCarousel = new bootstrap.Carousel(alaHomeMultipleCardCarousel, {
+                    interval: false,
+                    wrap: false
+                });
+                $(".ALAhome .carousel-control-next").on("click", function () {
+                    // next button in home page news carousel
+                    if (alaHomeCarouselScrollPosition < (alaHomeCarouselWidth - alaHomeCarouselCardWidth * (alaHomeCarouselCardsTotal - alaHomeCarouselCardsVisible))) { //check if you can go any further
+                        alaHomeCarouselScrollPosition += alaHomeCarouselCardWidth * alaHomeCarouselCardsVisible;  //update scroll position
+                    $(".carousel-inner").animate({ scrollLeft: alaHomeCarouselScrollPosition },600); //scroll left
+                    }
+                });
+            
+                $(".ALAhome .carousel-control-prev").on("click", function () {
+                    // prev button in home page news carousel
+                    if (alaHomeCarouselScrollPosition > 0) {
+                        alaHomeCarouselScrollPosition -= alaHomeCarouselCardWidth * alaHomeCarouselCardsVisible;
+                    $(".carousel-inner").animate(
+                        { scrollLeft: alaHomeCarouselScrollPosition },
+                        600
+                    );
+                    }
+                });
             } else {
-                collapseHomeSearchType(homeSearchTypeButton);
+                $(alaHomeMultipleCardCarousel).addClass("slide");
             }
-        });
-        homeSearchTypeButton.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") { // Space or Enter key
+        }
+        if (alaHomeSearchType.length > 0) {
+            // ALA home page - hero block - search input
+            const homeSearchType = document.querySelector(".ala-hero-type-input");
+            const homeSearchTypeButton = homeSearchType.querySelector("button");
+        
+            const expandHomeSearchType = () => {
+                const subMenu = homeSearchType.querySelector("div");
+                const button = homeSearchType.querySelector("button");
+        
+                subMenu.setAttribute("aria-hidden","false");
+                button.setAttribute("aria-expanded","true");
+                homeSearchType.dataset.expanded = "true";
+                //subMenu.querySelectorAll("a")[0].focus(); // Focus on the first link in the submenu
+                button.focus(); // Focus on the button
+            };
+        
+            const collapseHomeSearchType = () => {
+                const subMenu = homeSearchType.querySelector("div");
+                const button = homeSearchType.querySelector("button");
+        
+                subMenu.setAttribute("aria-hidden","true");
+                button.setAttribute("aria-expanded","false");
+                homeSearchType.dataset.expanded = "false";
+                button.focus(); // Focus back on the button
+            };
+        
+        
+            homeSearchTypeButton.addEventListener("click", (event) => {
                 event.preventDefault(); // Prevent the default action to stop scrolling when pressing Space
                 if (homeSearchTypeButton.ariaExpanded === "false") {
                     expandHomeSearchType(homeSearchTypeButton);
                 } else {
                     collapseHomeSearchType(homeSearchTypeButton);
                 }
-            }
-        });
+            });
+            homeSearchTypeButton.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") { // Space or Enter key
+                    event.preventDefault(); // Prevent the default action to stop scrolling when pressing Space
+                    if (homeSearchTypeButton.ariaExpanded === "false") {
+                        expandHomeSearchType(homeSearchTypeButton);
+                    } else {
+                        collapseHomeSearchType(homeSearchTypeButton);
+                    }
+                }
+            });
+        }
     }
 
     const expandSubMenu = (item) => {
