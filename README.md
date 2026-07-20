@@ -1,5 +1,5 @@
-# commonui-bs5-2024
-ALA commonui (2024 design) for bootstrap 5
+# commonui-bs5-currawong
+ALA commonui (currawong design, previously known as 2024) for bootstrap 5
 
 ## set up dev environment
 
